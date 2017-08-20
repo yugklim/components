@@ -1,0 +1,29 @@
+body {
+	overflow: hidden;
+}
+
+#root {
+	height: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.ant-layout.ant-layout-has-sider {
+	height: 100%;
+	min-width: 1280px;
+}
+
+.main-container {
+	flex-direction: row;
+	display: flex;
+	flex: auto;
+	min-height: 0;
+	position: relative;
+
+	.main-content {
+		display: flex;
+		flex: auto;
+		flex-direction: column;
+		min-width: 0;
+	}
+}

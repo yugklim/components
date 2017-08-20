@@ -1,0 +1,110 @@
+button,
+a {
+	&:extend(.animation-hover);
+
+	outline: none !important;
+
+	&:focus,
+	&:active,
+	&:hover {
+		outline: none !important;
+		text-decoration: none;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
+a {
+	text-decoration: underline;
+}
+
+.btn-card-table {
+	&:extend(.no-text-decoration all);
+
+	width: 64px;
+	min-width: 64px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	background: @light-blue-grey;
+	color: @cool-grey;
+	font-size: 10px;
+	line-height: 12px;
+	padding: 0 10px;
+	margin: 0;
+	border: 0;
+	cursor: pointer;
+	flex-direction: column;
+
+	i {
+		font-size: 32px;
+		margin-bottom: 4px;
+	}
+
+	&:hover {
+		background: @light-blue-grey-three;
+		color: @charcoal-grey;
+	}
+
+	&:active {
+		background: @light-blue-grey-four;
+		color: @charcoal-grey;
+	}
+}
+
+.btn-block {
+	width: 100%;
+}
+
+.btn-close-sidebar {
+	&:extend(.btn-reset);
+
+	position: absolute;
+	right: 40px;
+	top: 40px;
+	color: #babbc2;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+
+	&:hover {
+		color: @cerulean;
+	}
+
+	&:active {
+		color: @azure-two;
+	}
+
+	i {
+		font-size: 32px;
+		line-height: 32px;
+		font-weight: 300;
+	}
+}
+
+.btn-default-link {
+	&:extend(.btn-reset);
+	&:extend(.no-text-decoration);
+
+	color: @azure;
+
+	&:hover {
+		color: @primary-color;
+	}
+}
+
+.btn-group {
+	.ant-btn {
+		margin-left: 10px;
+	}
+}
+
+.btn-sm-mw {
+	min-width: 94px;
+}
+
+.btn-md-mw {
+	min-width: 120px;
+}

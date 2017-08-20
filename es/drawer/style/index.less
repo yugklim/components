@@ -1,0 +1,54 @@
+@import "../../styles/main.less";
+
+#sidebar {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+
+  .panel {
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+  }
+
+  .slider-panel {
+    padding: 32px 28px;
+  }
+}
+
+.ant-layout-sider {
+  z-index: 100;
+
+  &.ant-layout-sider-collapsed {
+    .ant-layout-sider-children {
+      overflow: hidden;
+      box-shadow: none;
+    }
+  }
+
+  .ant-layout-sider-children {
+    width: 100%;
+    height: 100vh;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.23);
+    z-index: 2;
+    overflow: hidden;
+  }
+}
+
+.sidebar-title {
+  padding-top: 38px;
+  padding-bottom: 16px;
+  font-size: 14px;
+
+  h2 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: bold;
+    margin: 0 0 3px;
+  }
+
+  p {
+    margin: 0 0 4px;
+    color: @steel;
+  }
+}
