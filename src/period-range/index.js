@@ -12,6 +12,12 @@ export default class PeriodRange extends React.Component {
         onNextClick: () => {console.log ('onNextClick')}
     };
 
+    componentDidMount() {
+        if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
+            this.props.onDidMount();
+        }
+    }
+
     render() {
         const dateRangeType = classNames(
             `date-range-${this.props.type} `
