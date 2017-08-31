@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 export default class PeriodRange extends React.Component {
     static defaultProps = {
@@ -9,7 +10,9 @@ export default class PeriodRange extends React.Component {
         },
         type: '',
         onPrevClick: () => {console.log ('onPrevClick')},
-        onNextClick: () => {console.log ('onNextClick')}
+        onNextClick: () => {console.log ('onNextClick')},
+        prevButtonDisabled: false,
+        nextButtonDisabled: false
     };
 
     componentDidMount() {
@@ -25,12 +28,24 @@ export default class PeriodRange extends React.Component {
 
         return (
             <div className={'date-range ' + dateRangeType}>
-                <button type='button' className='pull-left btn-prev' onClick={this.props.onPrevClick}>
-                    <i className='icon-left'></i>
-                </button>
-                <button type='button' className='pull-right btn-next' onClick={this.props.onNextClick}>
-                    <i className='icon-right'></i>
-                </button>
+                {
+                    this.props.prevButtonDisabled?
+                        <button type='button' disabled className='pull-left btn-prev-disabled'>
+                            <i className='icon-left'></i>
+                        </button>
+                        :<button type='button' className='pull-left btn-prev' onClick={this.props.onPrevClick}>
+                            <i className='icon-left'></i>
+                        </button>
+                }
+                {
+                    this.props.prevButtonDisabled?
+                        <button type='button' disabled className='pull-right btn-next'>
+                            <i className='icon-right'></i>
+                        </button>
+                        :<button type='button' className='pull-right btn-next' onClick={this.props.onNextClick}>
+                            <i className='icon-right'></i>
+                    </button>
+                }
                 {(this.props.period && this.props.period.begin && this.props.period.end)?
                 <div className='holder'>{this.props.period.begin.getDate()}
                     {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
@@ -41,4 +56,9 @@ export default class PeriodRange extends React.Component {
             </div>
         );
     }
+}
+
+PeriodRange.propTypes = {
+    prevButtonDisabled: PropTypes.bool,
+    nextButtonDisabled: PropTypes.bool
 }

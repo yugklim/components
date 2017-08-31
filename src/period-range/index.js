@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 export default class PeriodRange extends React.Component {
     static defaultProps = {
@@ -55,4 +56,9 @@ export default class PeriodRange extends React.Component {
             </div>
         );
     }
+}
+
+PeriodRange.propTypes = {
+    prevButtonDisabled: PropTypes.bool,
+    nextButtonDisabled: PropTypes.bool
 }
