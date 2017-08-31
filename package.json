@@ -1,6 +1,6 @@
 {
   "name": "hrm-comps",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "test": "jest",
     "build:dist": "webpack --config webpack.dist.config.js",
