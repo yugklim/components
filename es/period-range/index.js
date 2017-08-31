@@ -29,7 +29,7 @@ export default class PeriodRange extends React.Component {
         return (
             <div className={'date-range ' + dateRangeType}>
                 {
-                    this.props.prevButtonDisabled?
+                    (this.props.prevButtonDisabled === true)?
                         <button type='button' disabled className='pull-left btn-prev-disabled'>
                             <i className='icon-left'></i>
                         </button>
@@ -38,7 +38,7 @@ export default class PeriodRange extends React.Component {
                         </button>
                 }
                 {
-                    this.props.nextButtonDisabled?
+                    (this.props.nextButtonDisabled === true)?
                         <button type='button' disabled className='pull-right btn-next'>
                             <i className='icon-right'></i>
                         </button>
