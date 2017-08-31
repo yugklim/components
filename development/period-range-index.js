@@ -6,10 +6,8 @@ import { render } from 'react-dom';
 import Drawer from "../src/drawer";
 import PeriodRange from "../src/period-range";
 
-ReactDOM.render(<PeriodRange beginDay="3" beginMonth="Mar" endDay="11" endMonth="Jun"/>, document.getElementById('app'));
-
-// render({
-//         $$typeof: Symbol.for('react.element'),
-//         type: TableView
-//     },
-//     document.getElementById('app'));
+ReactDOM.render(
+    <div>
+        <PeriodRange/>
+        <PeriodRange prevButtonDisabled={true} nextButtonDisabled={true}/>
+    </div>, document.getElementById('app'));
