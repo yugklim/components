@@ -38,7 +38,7 @@ export default class PeriodRange extends React.Component {
                         </button>
                 }
                 {
-                    this.props.prevButtonDisabled?
+                    this.props.nextButtonDisabled?
                         <button type='button' disabled className='pull-right btn-next'>
                             <i className='icon-right'></i>
                         </button>

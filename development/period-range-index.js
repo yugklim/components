@@ -9,5 +9,7 @@ import PeriodRange from "../src/period-range";
 ReactDOM.render(
     <div>
         <PeriodRange/>
-        <PeriodRange prevButtonDisabled={true} nextButtonDisabled={true}/>
+        <PeriodRange prevButtonDisabled={true} />
+        <PeriodRange nextButtonDisabled={true}/>
     </div>, document.getElementById('app'));
+
