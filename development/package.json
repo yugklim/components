@@ -2,15 +2,15 @@
   "name": "HRM.Components",
   "version": "0.0.1",
   "scripts": {
-    "start": "babel-node tools/server.drawer-development.js",
-    "start:period-range": "babel-node tools/server.period-range-development.js"
+    "start:drawer": "babel-node tools/server.drawer-development.js",
+    "start": "babel-node tools/server.period-range-development.js"
   },
   "dependencies": {
     "antd": "^2.1.0",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

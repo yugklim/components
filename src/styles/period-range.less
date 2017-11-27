@@ -1,0 +1,19 @@
+@square-size: 60px;
+.period-square {
+  width: @square-size;
+  height: @square-size;
+  border-top: 10px solid @cool-grey-two;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+
+  p {
+    position: relative;
+    top: 25%;
+  }
+
+  &:nth-child(3n+1) {
+    clear: left;
+  }
+
+}
