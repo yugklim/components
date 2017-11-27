@@ -1,11 +1,22 @@
 @square-size: 60px;
+
 .period-square {
   width: @square-size;
   height: @square-size;
-  border-top: 10px solid @cool-grey-two;
   float: left;
   text-align: center;
   vertical-align: middle;
+
+  .period-month {
+    width: @square-size;
+    height: 10px;
+    line-height: 10px;
+    background-color: @cool-grey-two;
+    font-size: 7px;
+    font-family: OpenSans;
+    font-weight: 600;
+    vertical-align: top;
+  }
 
   p {
     position: relative;
@@ -15,5 +26,5 @@
   &:nth-child(3n+1) {
     clear: left;
   }
-
 }
+

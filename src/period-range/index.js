@@ -55,8 +55,11 @@ export default class PeriodRange extends React.Component {
                     }
                     <div>
                         {
-                            this.props.periods.map((p, idx) =>
-                                    <RangeElement period={p} {...this.props}></RangeElement>
+                            this.props.periods.map((period, idx, periods) => {
+                                    const previousPeriod = periods[idx-1];
+                                    const markMonth = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
+                                    return <RangeElement period={period} markMonth={markMonth} {...this.props}></RangeElement>
+                                }
                             )
                         }
                         {/*<div className='period-square new-raw'><p>1</p></div><div className='period-square'><p>2</p></div><div className='period-square'><p>3</p></div>*/}
