@@ -27,6 +27,7 @@ export default class PeriodRange extends React.Component {
         return (
                 <div className={'range-selector date-range ' + dateRangeType} >
                     <div className="month-selector">
+                        <div className="inner">
                         {
                             (this.props.prevButtonDisabled === true)?
                                 <button type='button' disabled className='pull-left btn-prev-disabled'>
@@ -54,6 +55,7 @@ export default class PeriodRange extends React.Component {
                                 </div>
                                 :<div className='holder'>no info</div>
                         }
+                        </div>
                     </div>
                     <div>
                         {
