@@ -25,40 +25,43 @@ export default class PeriodRange extends React.Component {
         );
 
         return (
-                <div className={'date-range ' + dateRangeType}>
-                    {
-                        (this.props.prevButtonDisabled === true)?
-                            <button type='button' disabled className='pull-left btn-prev-disabled'>
-                                <i className='icon-left'></i>
+                <div className={'range-selector date-range ' + dateRangeType} >
+                    <div className="month-selector">
+                        {
+                            (this.props.prevButtonDisabled === true)?
+                                <button type='button' disabled className='pull-left btn-prev-disabled'>
+                                    <i className='icon-left'></i>
+                                </button>
+                                :<button type='button' className='pull-left btn-prev' onClick={this.props.onPrevClick}>
+                                    <i className='icon-left'></i>
+                                </button>
+                        }
+                        {
+                            (this.props.nextButtonDisabled === true)?
+                                <button type='button' disabled className='pull-right btn-next'>
+                                    <i className='icon-right'></i>
+                                </button>
+                                :<button type='button' className='pull-right btn-next' onClick={this.props.onNextClick}>
+                                    <i className='icon-right'></i>
                             </button>
-                            :<button type='button' className='pull-left btn-prev' onClick={this.props.onPrevClick}>
-                                <i className='icon-left'></i>
-                            </button>
-                    }
-                    {
-                        (this.props.nextButtonDisabled === true)?
-                            <button type='button' disabled className='pull-right btn-next'>
-                                <i className='icon-right'></i>
-                            </button>
-                            :<button type='button' className='pull-right btn-next' onClick={this.props.onNextClick}>
-                                <i className='icon-right'></i>
-                        </button>
-                    }
-                    {
-                        (this.props.period && this.props.period.begin && this.props.period.end)?
-                            <div className='holder'>{this.props.period.begin.getDate()}
-                                {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
-                                    ''
-                                    :` ${this.props.period.begin.toLocaleString('en-us', { month: 'long' })}`} — {this.props.period.end.getDate()} {this.props.period.end.toLocaleString('en-us', { month: 'long' })}
-                            </div>
-                            :<div className='holder'>no info</div>
-                    }
+                        }
+                        {
+                            (this.props.period && this.props.period.begin && this.props.period.end)?
+                                <div className='holder'>{this.props.period.begin.getDate()}
+                                    {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
+                                        ''
+                                        :` ${this.props.period.begin.toLocaleString('en-us', { month: 'long' })}`} — {this.props.period.end.getDate()} {this.props.period.end.toLocaleString('en-us', { month: 'long' })}
+                                </div>
+                                :<div className='holder'>no info</div>
+                        }
+                    </div>
                     <div>
                         {
                             this.props.periods.map((period, idx, periods) => {
                                     const previousPeriod = periods[idx-1];
-                                    const markMonth = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
-                                    return <RangeElement period={period} markMonth={markMonth} {...this.props}></RangeElement>
+                                    const monthName = (!previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth());
+                                    const markMonth = monthName && (idx%3 !== 0);
+                                    return <RangeElement period={period} markMonth={markMonth} monthName={monthName} {...this.props}></RangeElement>
                                 }
                             )
                         }

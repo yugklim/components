@@ -45,7 +45,7 @@ const periods = [
     }
     ]
 ReactDOM.render(
-    <div>
+    <div style={{marginLeft: '55px'}}>
         <PeriodRange periods={periods}/>
         {/*<PeriodRange prevButtonDisabled={true} />*/}
         {/*<PeriodRange nextButtonDisabled={true}/>*/}
