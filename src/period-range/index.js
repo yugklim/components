@@ -33,12 +33,9 @@ export default class PeriodRange extends React.Component {
     }
 
     render() {
-        const dateRangeType = classNames(
-            `date-range-${this.props.type} `
-        );
 
         return (
-                <div className={'range-selector date-range ' + dateRangeType} ref={(container) => { this.container=container; }}>
+                <div className={'range-selector-shortened'} ref={(container) => { this.container=container; }}>
                     <div className='month-selector'>
                         <div className='inner'>
                         {
@@ -72,7 +69,7 @@ export default class PeriodRange extends React.Component {
                         }
                         </div>
                     </div>
-                    <div ref={(ranges) => { this.ranges= ranges; }}>
+                    <div ref={(ranges) => { this.ranges= ranges; }} style={{visibility:'hidden'}}>
                         {
                             this.props.periods.map((period, idx, periods) => {
                                     const previousPeriod = periods[idx-1];
@@ -83,7 +80,9 @@ export default class PeriodRange extends React.Component {
                                             markMonth={markMonth}
                                             monthName={monthName}
                                             onClick={this.props.onRangeClick.bind(this, period)}
-                                            {...this.props}></RangeElement>
+                                            {...this.props}>
+
+                                    </RangeElement>
                                 }
                             )
                         }
