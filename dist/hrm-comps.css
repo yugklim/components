@@ -16920,7 +16920,8 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .btn-reset,
 .btn-close-sidebar,
 .btn-default-link,
-button {
+.range-selector button,
+.range-selector-shortened button {
   background: none;
   border: 0;
   margin: 0;
@@ -17058,62 +17059,6 @@ a {
 .btn-md-mw {
   min-width: 120px;
 }
-.month-selector {
-  height: 61px;
-  text-align: center;
-}
-.month-selector .inner {
-  position: relative;
-  width: 100%;
-  top: 25%;
-}
-button {
-  font-size: 9px;
-  line-height: 30px;
-  color: #91939e;
-  width: 30px;
-  text-align: center;
-  border: 1px solid transparent;
-}
-button:hover {
-  border-color: #dcdde2;
-  background: #f0f1f7;
-}
-button:active {
-  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
-}
-button i {
-  position: relative;
-  top: 1px;
-}
-.btn-prev {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.btn-next {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.holder {
-  font-size: 14px;
-  display: block;
-  overflow: hidden;
-  padding: 0 15px;
-  cursor: default;
-}
-.date-range-border {
-  display: block;
-  border: 1px solid #d7d7d7;
-  background: #fff;
-  border-radius: 4px;
-  text-align: center;
-}
-.date-range-border .btn-prev {
-  margin-left: -1px;
-}
-.date-range-border .btn-next {
-  margin-right: -1px;
-}
 .range-selector,
 .range-selector-shortened {
   width: 255px;
@@ -17164,6 +17109,118 @@ button i {
 .range-selector .period-square:nth-child(3n+1) {
   clear: left;
 }
+.range-selector .month-selector {
+  height: 61px;
+  text-align: center;
+}
+.range-selector .month-selector .inner {
+  position: relative;
+  width: 100%;
+  top: 25%;
+}
+.range-selector button {
+  font-size: 9px;
+  line-height: 30px;
+  color: #91939e;
+  width: 30px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.range-selector button:hover {
+  border-color: #dcdde2;
+  background: #f0f1f7;
+}
+.range-selector button:active {
+  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+}
+.range-selector button i {
+  position: relative;
+  top: 1px;
+}
+.range-selector .btn-prev {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.range-selector .btn-next {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.range-selector .holder {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  padding: 0 15px;
+  cursor: default;
+}
+.range-selector.date-range-border {
+  display: block;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+}
+.range-selector.date-range-border .btn-prev {
+  margin-left: -1px;
+}
+.range-selector.date-range-border .btn-next {
+  margin-right: -1px;
+}
 .range-selector-shortened {
   height: 61px;
+}
+.range-selector-shortened .month-selector {
+  height: 61px;
+  text-align: center;
+}
+.range-selector-shortened .month-selector .inner {
+  position: relative;
+  width: 100%;
+  top: 25%;
+}
+.range-selector-shortened button {
+  font-size: 9px;
+  line-height: 30px;
+  color: #91939e;
+  width: 30px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.range-selector-shortened button:hover {
+  border-color: #dcdde2;
+  background: #f0f1f7;
+}
+.range-selector-shortened button:active {
+  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+}
+.range-selector-shortened button i {
+  position: relative;
+  top: 1px;
+}
+.range-selector-shortened .btn-prev {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.range-selector-shortened .btn-next {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.range-selector-shortened .holder {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  padding: 0 15px;
+  cursor: default;
+}
+.range-selector-shortened.date-range-border {
+  display: block;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+}
+.range-selector-shortened.date-range-border .btn-prev {
+  margin-left: -1px;
+}
+.range-selector-shortened.date-range-border .btn-next {
+  margin-right: -1px;
 }
