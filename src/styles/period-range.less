@@ -3,28 +3,89 @@
 @month-marker-gutter-height: 10px;
 @period-square-inner-height: 51px;
 
+.month-selector {
+  height: @square-height;
+  text-align: center;
+
+  .inner {
+    position: relative;
+    width: 100%;
+    top: 25%;
+  }
+}
+
+button {
+  &:extend(.btn-reset);
+
+  font-size: 9px;
+  line-height: 30px;
+  color: @cool-grey;
+  width: 30px;
+  text-align: center;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: @silver-two;
+    background: @pale-grey-three;
+  }
+
+  &:active {
+    box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  i {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.btn-prev {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.btn-next {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.holder {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+&.date-range-border {
+  display: block;
+  border: 1px solid @white-two;
+  background: @white;
+  border-radius: 4px;
+  text-align: center;
+
+  .btn-prev {
+    margin-left: -1px;
+  }
+
+  .btn-next {
+    margin-right: -1px;
+  }
+}
+
 .range-selector {
   width: 255px;
+  height: 244px;
   height: 244px;
   border-radius: 4px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: #ffffff;
   box-shadow: 0 2px 5px 2px rgba(32, 40, 49, 0.23);
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
 
-  .month-selector {
-    height: @square-height;
-    text-align: center;
-
-    .inner {
-      position: relative;
-      width: 100%;
-      top: 25%;
-    }
-  }
-}
-
-.period-square {
+  .period-square {
     width: @square-width;
     height: @square-height;
     float: left;
@@ -32,7 +93,7 @@
     vertical-align: middle;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       background-color: @sky-blue-23;
     }
 
@@ -67,5 +128,13 @@
       clear: left;
     }
   }
+}
+
+.range-selector-shortened {
+  &:extend(.range-selector);
+  height: @square-height;
+}
+
+
 
 

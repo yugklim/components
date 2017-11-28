@@ -15,6 +15,17 @@ export default class PeriodRange extends React.Component {
         nextButtonDisabled: false
     };
 
+    onMonthClick() {
+        if (this.container.className === 'range-selector-shortened') {
+            this.container.className = 'range-selector';
+            this.ranges.style.visibility = 'visible';
+        }
+        else {
+            this.container.className = 'range-selector-shortened';
+            this.ranges.style.visibility = 'hidden';
+        }
+    }
+
     componentDidMount() {
         if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
             this.props.onDidMount();
@@ -27,7 +38,7 @@ export default class PeriodRange extends React.Component {
         );
 
         return (
-                <div className={'range-selector date-range ' + dateRangeType} >
+                <div className={'range-selector date-range ' + dateRangeType} ref={(container) => { this.container=container; }}>
                     <div className='month-selector'>
                         <div className='inner'>
                         {
@@ -50,17 +61,18 @@ export default class PeriodRange extends React.Component {
                         }
                         {
                             (this.props.period && this.props.period.begin && this.props.period.end)?
-                                <div className='holder'>{this.props.period.begin.getDate()}
+                                <div className='holder' onClick={this.onMonthClick.bind(this)}>{this.props.period.begin.getDate()}
                                     {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
                                         ''
                                         //TODO: move locale to constants
                                         :` ${this.props.period.begin.toLocaleString('en-us', { month: 'long' })}`} — {this.props.period.end.getDate()} {this.props.period.end.toLocaleString('en-us', { month: 'long' })}
                                 </div>
-                                :<div className='holder'>no info</div>
+                                //TODO: remove click after debug
+                                :<div className='holder' onClick={this.onMonthClick.bind(this)}>no info</div>
                         }
                         </div>
                     </div>
-                    <div>
+                    <div ref={(ranges) => { this.ranges= ranges; }}>
                         {
                             this.props.periods.map((period, idx, periods) => {
                                     const previousPeriod = periods[idx-1];
