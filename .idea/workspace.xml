@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4207a89-9da0-4bd6-bfd1-8cd13520f59d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development/index.html" afterPath="$PROJECT_DIR$/development/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range/index.js" afterPath="$PROJECT_DIR$/src/period-range/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range/style/index.less" afterPath="$PROJECT_DIR$/src/period-range/style/index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/period-range/style/index.less" afterPath="$PROJECT_DIR$/es/period-range/style/index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/period-range.less" afterPath="$PROJECT_DIR$/src/styles/period-range.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,24 +18,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+            <state relative-caret-position="451">
+              <caret line="60" column="52" lean-forward="true" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/es/period-range/style/index.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/src/period-range/style/index.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+              <caret line="0" column="18" lean-forward="true" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -92,19 +80,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="period-range.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="period-range.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+            <state relative-caret-position="175">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="e#130#252#0" expanded="false" />
                 <element signature="e#261#623#0" expanded="false" />
                 <element signature="e#635#703#0" expanded="false" />
                 <element signature="e#715#785#0" expanded="false" />
-                <element signature="e#795#874#0" expanded="false" />
-                <element signature="e#896#1100#0" expanded="false" />
-                <element signature="e#1430#2265#0" expanded="false" />
+                <element signature="e#915#1119#0" expanded="false" />
+                <element signature="e#1449#2284#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -145,7 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>drawer</find>
       <find>Period</find>
       <find>exports.de</find>
       <find>exports</find>
@@ -175,6 +161,7 @@
       <find>cdcd</find>
       <find>ddf5ff</find>
       <find>d</find>
+      <find>cursor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -228,12 +215,12 @@
         <option value="$PROJECT_DIR$/development/period-range-index.js" />
         <option value="$PROJECT_DIR$/src/period-range/range-element/index.js" />
         <option value="$PROJECT_DIR$/src/styles/override.less" />
-        <option value="$PROJECT_DIR$/src/styles/period-range.less" />
-        <option value="$PROJECT_DIR$/es/period-range/style/index.less" />
         <option value="$PROJECT_DIR$/development/webpack.period-range-development.config.js" />
         <option value="$PROJECT_DIR$/development/index.html" />
         <option value="$PROJECT_DIR$/src/period-range/style/index.less" />
         <option value="$PROJECT_DIR$/src/period-range/index.js" />
+        <option value="$PROJECT_DIR$/es/period-range/style/index.less" />
+        <option value="$PROJECT_DIR$/src/styles/period-range.less" />
       </list>
     </option>
   </component>
@@ -362,60 +349,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="range-element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRM.Ui.Components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRM.Ui.Components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRM.Ui.Components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRM.Ui.Components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="period-range" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRM.Ui.Components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRM.Ui.Components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="period-range" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,7 +608,7 @@
       <workItem from="1504185345579" duration="6739000" />
       <workItem from="1506012314371" duration="613000" />
       <workItem from="1511518087104" duration="10509000" />
-      <workItem from="1511536401664" duration="38694000" />
+      <workItem from="1511536401664" duration="39052000" />
     </task>
     <servers />
   </component>
@@ -712,7 +645,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252957000" />
+    <option name="totallyTimeSpent" value="253315000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -729,12 +662,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2260274" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18060201" sideWeight="0.44415173" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18060201" sideWeight="0.44625923" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.48946258" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18060201" sideWeight="0.55584824" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18060201" sideWeight="0.5537408" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.75711274" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21516165" sideWeight="0.6959958" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21516165" sideWeight="0.69336146" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.73340356" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1033,22 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
-          <folding>
-            <element signature="e#130#252#0" expanded="false" />
-            <element signature="e#261#623#0" expanded="false" />
-            <element signature="e#635#703#0" expanded="false" />
-            <element signature="e#715#785#0" expanded="false" />
-            <element signature="e#795#874#0" expanded="false" />
-            <element signature="e#896#1100#0" expanded="false" />
-            <element signature="e#1430#2265#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/development/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1089,22 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es/period-range/style/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/period-range/style/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/period-range/range-element/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1113,12 +1014,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/es/period-range/style/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding>
+            <element signature="e#47#1110#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        <state relative-caret-position="451">
+          <caret line="60" column="52" lean-forward="true" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/period-range/style/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="true" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#130#252#0" expanded="false" />
+            <element signature="e#261#623#0" expanded="false" />
+            <element signature="e#635#703#0" expanded="false" />
+            <element signature="e#715#785#0" expanded="false" />
+            <element signature="e#915#1119#0" expanded="false" />
+            <element signature="e#1449#2284#0" expanded="false" />
           </folding>
         </state>
       </provider>
