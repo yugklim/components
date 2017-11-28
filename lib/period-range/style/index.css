@@ -531,26 +531,21 @@ pre,
 samp {
   font-family: Consolas, Menlo, Courier, monospace;
 }
-.clearfix,
-.date-range {
+.clearfix {
   zoom: 1;
 }
 .clearfix:before,
-.clearfix:after,
-.date-range:before,
-.date-range:after {
+.clearfix:after {
   content: " ";
   display: table;
 }
-.clearfix:after,
-.date-range:after {
+.clearfix:after {
   clear: both;
   visibility: hidden;
   font-size: 0;
   height: 0;
 }
-.clearfix:after,
-.date-range:after {
+.clearfix:after {
   display: block;
   content: "";
   clear: both;
@@ -16907,8 +16902,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   padding: 0;
   list-style: none;
 }
-.clearfix:after,
-.date-range:after {
+.clearfix:after {
   display: block;
   content: "";
   clear: both;
@@ -16926,7 +16920,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .btn-reset,
 .btn-close-sidebar,
 .btn-default-link,
-.date-range button {
+button {
   background: none;
   border: 0;
   margin: 0;
@@ -17064,12 +17058,16 @@ a {
 .btn-md-mw {
   min-width: 120px;
 }
-.date-range {
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
+.month-selector {
+  height: 61px;
+  text-align: center;
 }
-.date-range button {
+.month-selector .inner {
+  position: relative;
+  width: 100%;
+  top: 25%;
+}
+button {
   font-size: 9px;
   line-height: 30px;
   color: #91939e;
@@ -17077,41 +17075,95 @@ a {
   text-align: center;
   border: 1px solid transparent;
 }
-.date-range button:hover {
+button:hover {
   border-color: #dcdde2;
   background: #f0f1f7;
 }
-.date-range button:active {
+button:active {
   box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
 }
-.date-range button i {
+button i {
   position: relative;
   top: 1px;
 }
-.date-range .btn-prev {
+.btn-prev {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.date-range .btn-next {
+.btn-next {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-.date-range .holder {
+.holder {
   font-size: 14px;
   display: block;
   overflow: hidden;
   padding: 0 15px;
+  cursor: default;
 }
-.date-range.date-range-border {
+.date-range-border {
   display: block;
   border: 1px solid #d7d7d7;
   background: #fff;
   border-radius: 4px;
   text-align: center;
 }
-.date-range.date-range-border .btn-prev {
+.date-range-border .btn-prev {
   margin-left: -1px;
 }
-.date-range.date-range-border .btn-next {
+.date-range-border .btn-next {
   margin-right: -1px;
+}
+.range-selector,
+.range-selector-shortened {
+  width: 255px;
+  height: 244px;
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px 2px rgba(32, 40, 49, 0.23);
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+.range-selector .period-square {
+  width: 85px;
+  height: 61px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.range-selector .period-square:hover {
+  background-color: #ddf5ff;
+}
+.range-selector .period-square .period-square-inner {
+  border-right: 1px solid #f7f8fc;
+  height: 51px;
+}
+.range-selector .period-square .period-month {
+  width: 85px;
+  height: 10px;
+  line-height: 10px;
+  background-color: rgba(148, 150, 160, 0.1);
+  font-size: 7px;
+  font-family: OpenSans;
+  font-weight: 600;
+  vertical-align: top;
+  text-align: left;
+  padding-left: 8px;
+}
+.range-selector .period-square .month-begins {
+  border-left: 1px solid #cdcdd2;
+}
+.range-selector .period-square p {
+  position: relative;
+  top: 25%;
+}
+.range-selector .period-square:nth-child(3n+1) {
+  clear: left;
+}
+.range-selector-shortened {
+  height: 61px;
 }

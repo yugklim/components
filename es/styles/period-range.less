@@ -1,0 +1,141 @@
+@square-width: 85px;
+@square-height: 61px;
+@month-marker-gutter-height: 10px;
+@period-square-inner-height: 51px;
+
+.month-selector {
+  height: @square-height;
+  text-align: center;
+
+  .inner {
+    position: relative;
+    width: 100%;
+    top: 25%;
+  }
+}
+
+button {
+  &:extend(.btn-reset);
+
+  font-size: 9px;
+  line-height: 30px;
+  color: @cool-grey;
+  width: 30px;
+  text-align: center;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: @silver-two;
+    background: @pale-grey-three;
+  }
+
+  &:active {
+    box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  i {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.btn-prev {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.btn-next {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.holder {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  padding: 0 15px;
+  cursor: default;
+}
+
+&.date-range-border {
+  display: block;
+  border: 1px solid @white-two;
+  background: @white;
+  border-radius: 4px;
+  text-align: center;
+
+  .btn-prev {
+    margin-left: -1px;
+  }
+
+  .btn-next {
+    margin-right: -1px;
+  }
+}
+
+.range-selector {
+  width: 255px;
+  height: 244px;
+  height: 244px;
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px 2px rgba(32, 40, 49, 0.23);
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+
+  .period-square {
+    width: @square-width;
+    height: @square-height;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      background-color: @sky-blue-23;
+    }
+
+    .period-square-inner {
+      border-right: 1px solid @pale-grey;
+      height: @period-square-inner-height;
+    }
+
+    .period-month {
+      width: @square-width;
+      height: @month-marker-gutter-height;
+      line-height: @month-marker-gutter-height;
+      background-color: @cool-grey-two;
+      font-size: 7px;
+      font-family: OpenSans;
+      font-weight: 600;
+      vertical-align: top;
+      text-align: left;
+      padding-left: 8px;
+    }
+
+    .month-begins {
+      border-left: 1px solid @silver
+    }
+
+    p {
+      position: relative;
+      top: 25%;
+    }
+
+    &:nth-child(3n+1) {
+      clear: left;
+    }
+  }
+}
+
+.range-selector-shortened {
+  &:extend(.range-selector);
+  height: @square-height;
+}
+
+
+
+
