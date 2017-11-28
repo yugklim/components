@@ -9,6 +9,8 @@ export default class PeriodRange extends React.Component {
         type: '',
         onPrevClick: () => {console.log ('onPrevClick')},
         onNextClick: () => {console.log ('onNextClick')},
+        // eslint-disable-next-line no-unused-vars
+        onRangeClick: (period) => {console.log ('onRangeClick')},
         prevButtonDisabled: false,
         nextButtonDisabled: false
     };
@@ -26,8 +28,8 @@ export default class PeriodRange extends React.Component {
 
         return (
                 <div className={'range-selector date-range ' + dateRangeType} >
-                    <div className="month-selector">
-                        <div className="inner">
+                    <div className='month-selector'>
+                        <div className='inner'>
                         {
                             (this.props.prevButtonDisabled === true)?
                                 <button type='button' disabled className='pull-left btn-prev-disabled'>
@@ -51,6 +53,7 @@ export default class PeriodRange extends React.Component {
                                 <div className='holder'>{this.props.period.begin.getDate()}
                                     {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
                                         ''
+                                        //TODO: move locale to constants
                                         :` ${this.props.period.begin.toLocaleString('en-us', { month: 'long' })}`} — {this.props.period.end.getDate()} {this.props.period.end.toLocaleString('en-us', { month: 'long' })}
                                 </div>
                                 :<div className='holder'>no info</div>
@@ -63,13 +66,15 @@ export default class PeriodRange extends React.Component {
                                     const previousPeriod = periods[idx-1];
                                     const monthName = (!previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth());
                                     const markMonth = monthName && (idx%3 !== 0);
-                                    return <RangeElement period={period} markMonth={markMonth} monthName={monthName} {...this.props}></RangeElement>
+                                    return <RangeElement
+                                            period={period}
+                                            markMonth={markMonth}
+                                            monthName={monthName}
+                                            onClick={this.props.onRangeClick.bind(this, period)}
+                                            {...this.props}></RangeElement>
                                 }
                             )
                         }
-                        {/*<div className='period-square new-raw'><p>1</p></div><div className='period-square'><p>2</p></div><div className='period-square'><p>3</p></div>*/}
-                        {/*<div className='period-square new-raw'><p>4</p></div><div className='period-square'><p>5</p></div><div className='period-square'><p>6</p></div>*/}
-                        {/*<div className='period-square new-raw'><p>7</p></div><div className='period-square'><p>8</p></div><div className='period-square'><p>9</p></div>*/}
                     </div>
                 </div>
         );
