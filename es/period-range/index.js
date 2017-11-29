@@ -10,9 +10,17 @@ export default class PeriodRange extends React.Component {
         type: '',
         onPrevClick: () => {console.log ('onPrevClick')},
         onNextClick: () => {console.log ('onNextClick')},
+        onPeriodClick: () => {console.log ('onPeriodClick')},
         prevButtonDisabled: false,
         nextButtonDisabled: false
     };
+
+    onPeriodClick(period, target) {
+        const {onPeriodClick} = this.props;
+        if (onPeriodClick) {
+            onPeriodClick(period, target);
+        }
+    }
 
     componentDidMount() {
         if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
@@ -42,7 +50,8 @@ export default class PeriodRange extends React.Component {
                     </button>
                 }
                 {(this.props.period && this.props.period.begin && this.props.period.end)?
-                    <div className='holder'>{this.props.period.begin.getDate()}
+                    //TODO: switch to the :: notations as well as props destructuring
+                    <div className='holder' onClick={this.onPeriodClick.bind(this, this.props.period)}>{this.props.period.begin.getDate()}
                         {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
                             ''
                             :` ${this.props.period.begin.toLocaleString('en-us', { month: 'long' })}`} — {this.props.period.end.getDate()} {this.props.period.end.toLocaleString('en-us', { month: 'long' })}

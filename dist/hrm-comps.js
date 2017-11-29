@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -377,9 +377,9 @@ module.exports = emptyFunction;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(13);
-} else {
   module.exports = __webpack_require__(14);
+} else {
+  module.exports = __webpack_require__(15);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -672,6 +672,133 @@ module.exports = checkPropTypes;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(10);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PeriodRange = function (_React$Component) {
+    _inherits(PeriodRange, _React$Component);
+
+    function PeriodRange() {
+        _classCallCheck(this, PeriodRange);
+
+        return _possibleConstructorReturn(this, (PeriodRange.__proto__ || Object.getPrototypeOf(PeriodRange)).apply(this, arguments));
+    }
+
+    _createClass(PeriodRange, [{
+        key: 'onPeriodClick',
+        value: function onPeriodClick(period, target) {
+            var onPeriodClick = this.props.onPeriodClick;
+
+            if (onPeriodClick) {
+                onPeriodClick(period, target);
+            }
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
+                this.props.onDidMount();
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'date-range' },
+                this.props.prevButtonDisabled === true ? _react2.default.createElement(
+                    'button',
+                    { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
+                    _react2.default.createElement('i', { className: 'icon-left' })
+                ) : _react2.default.createElement(
+                    'button',
+                    { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
+                    _react2.default.createElement('i', { className: 'icon-left' })
+                ),
+                this.props.nextButtonDisabled === true ? _react2.default.createElement(
+                    'button',
+                    { type: 'button', disabled: true, className: 'pull-right btn-next' },
+                    _react2.default.createElement('i', { className: 'icon-right' })
+                ) : _react2.default.createElement(
+                    'button',
+                    { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
+                    _react2.default.createElement('i', { className: 'icon-right' })
+                ),
+                this.props.period && this.props.period.begin && this.props.period.end ?
+                //TODO: switch to the :: notations as well as props destructuring
+                _react2.default.createElement(
+                    'div',
+                    { className: 'holder', onClick: this.onPeriodClick.bind(this, this.props.period) },
+                    this.props.period.begin.getDate(),
+                    this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? '' : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
+                    ' \u2014 ',
+                    this.props.period.end.getDate(),
+                    ' ',
+                    this.props.period.end.toLocaleString('en-us', { month: 'long' })
+                ) : _react2.default.createElement(
+                    'div',
+                    { className: 'holder' },
+                    'no info'
+                )
+            );
+        }
+    }]);
+
+    return PeriodRange;
+}(_react2.default.Component);
+
+PeriodRange.defaultProps = {
+    period: {
+        begin: new Date(),
+        end: new Date()
+    },
+    type: '',
+    onPrevClick: function onPrevClick() {
+        console.log('onPrevClick');
+    },
+    onNextClick: function onNextClick() {
+        console.log('onNextClick');
+    },
+    onPeriodClick: function onPeriodClick() {
+        console.log('onPeriodClick');
+    },
+    prevButtonDisabled: false,
+    nextButtonDisabled: false
+};
+exports.default = PeriodRange;
+
+
+PeriodRange.propTypes = {
+    prevButtonDisabled: _propTypes2.default.bool,
+    nextButtonDisabled: _propTypes2.default.bool
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -706,14 +833,14 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(11);
+module.exports = __webpack_require__(12);
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -724,11 +851,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PeriodRangeByMonth = exports.PeriodRange = exports.Drawer = undefined;
 
-var _drawer = __webpack_require__(12);
+var _drawer = __webpack_require__(13);
 
 var _drawer2 = _interopRequireDefault(_drawer);
 
-var _periodRange = __webpack_require__(15);
+var _periodRange = __webpack_require__(9);
 
 var _periodRangeByMonth = __webpack_require__(18);
 
@@ -739,7 +866,7 @@ exports.PeriodRange = _periodRange.PeriodRange;
 exports.PeriodRangeByMonth = _periodRangeByMonth.PeriodRangeByMonth;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -814,7 +941,7 @@ Drawer.defaultProps = {
 exports.default = Drawer;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -844,7 +971,7 @@ module.exports={Children:{map:S.map,forEach:S.forEach,count:S.count,toArray:S.to
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2550,119 +2677,6 @@ module.exports = ReactEntry;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(9);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var PeriodRange = function (_React$Component) {
-    _inherits(PeriodRange, _React$Component);
-
-    function PeriodRange() {
-        _classCallCheck(this, PeriodRange);
-
-        return _possibleConstructorReturn(this, (PeriodRange.__proto__ || Object.getPrototypeOf(PeriodRange)).apply(this, arguments));
-    }
-
-    _createClass(PeriodRange, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
-                this.props.onDidMount();
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'date-range' },
-                this.props.prevButtonDisabled === true ? _react2.default.createElement(
-                    'button',
-                    { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
-                    _react2.default.createElement('i', { className: 'icon-left' })
-                ) : _react2.default.createElement(
-                    'button',
-                    { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
-                    _react2.default.createElement('i', { className: 'icon-left' })
-                ),
-                this.props.nextButtonDisabled === true ? _react2.default.createElement(
-                    'button',
-                    { type: 'button', disabled: true, className: 'pull-right btn-next' },
-                    _react2.default.createElement('i', { className: 'icon-right' })
-                ) : _react2.default.createElement(
-                    'button',
-                    { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
-                    _react2.default.createElement('i', { className: 'icon-right' })
-                ),
-                this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
-                    'div',
-                    { className: 'holder' },
-                    this.props.period.begin.getDate(),
-                    this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? '' : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
-                    ' \u2014 ',
-                    this.props.period.end.getDate(),
-                    ' ',
-                    this.props.period.end.toLocaleString('en-us', { month: 'long' })
-                ) : _react2.default.createElement(
-                    'div',
-                    { className: 'holder' },
-                    'no info'
-                )
-            );
-        }
-    }]);
-
-    return PeriodRange;
-}(_react2.default.Component);
-
-PeriodRange.defaultProps = {
-    period: {
-        begin: new Date(),
-        end: new Date()
-    },
-    type: '',
-    onPrevClick: function onPrevClick() {
-        console.log('onPrevClick');
-    },
-    onNextClick: function onNextClick() {
-        console.log('onNextClick');
-    },
-    prevButtonDisabled: false,
-    nextButtonDisabled: false
-};
-exports.default = PeriodRange;
-
-
-PeriodRange.propTypes = {
-    prevButtonDisabled: _propTypes2.default.bool,
-    nextButtonDisabled: _propTypes2.default.bool
-};
-
-/***/ }),
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3267,13 +3281,17 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(9);
+var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _rangeElement = __webpack_require__(19);
 
 var _rangeElement2 = _interopRequireDefault(_rangeElement);
+
+var _periodRange = __webpack_require__(9);
+
+var _periodRange2 = _interopRequireDefault(_periodRange);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3293,14 +3311,14 @@ var PeriodRangeByMonth = function (_React$Component) {
     }
 
     _createClass(PeriodRangeByMonth, [{
-        key: 'onMonthClick',
-        value: function onMonthClick() {
-            if (this.ranges.style.display == 'none') {
+        key: 'toggleRanges',
+        value: function toggleRanges() {
+            if (this.container.style.display == 'none') {
                 //this.container.className = 'range-selector';
-                this.ranges.style.display = 'block';
+                this.container.style.display = 'block';
             } else {
                 //this.container.className = 'range-selector-shortened';
-                this.ranges.style.display = 'none';
+                this.container.style.display = 'none';
             }
         }
     }, {
@@ -3317,69 +3335,78 @@ var PeriodRangeByMonth = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'range-selector-shortened', ref: function ref(container) {
-                        _this2.container = container;
-                    } },
+                null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'month-selector' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'inner' },
-                        this.props.prevButtonDisabled === true ? _react2.default.createElement(
-                            'button',
-                            { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
-                            _react2.default.createElement('i', { className: 'icon-left' })
-                        ) : _react2.default.createElement(
-                            'button',
-                            { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
-                            _react2.default.createElement('i', { className: 'icon-left' })
-                        ),
-                        this.props.nextButtonDisabled === true ? _react2.default.createElement(
-                            'button',
-                            { type: 'button', disabled: true, className: 'pull-right btn-next' },
-                            _react2.default.createElement('i', { className: 'icon-right' })
-                        ) : _react2.default.createElement(
-                            'button',
-                            { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
-                            _react2.default.createElement('i', { className: 'icon-right' })
-                        ),
-                        this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
-                            'div',
-                            { className: 'holder', onClick: this.onMonthClick.bind(this) },
-                            this.props.period.begin.getDate(),
-                            this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? ''
-                            //TODO: move locale to constants
-                            : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
-                            ' \u2014 ',
-                            this.props.period.end.getDate(),
-                            ' ',
-                            this.props.period.end.toLocaleString('en-us', { month: 'long' })
-                        )
-                        //TODO: remove click after debug
-                        : _react2.default.createElement(
-                            'div',
-                            { className: 'holder', onClick: this.onMonthClick.bind(this) },
-                            'no info'
-                        )
-                    )
+                    null,
+                    _react2.default.createElement(_periodRange2.default, { onPeriodClick: this.toggleRanges.bind(this) })
                 ),
                 _react2.default.createElement(
                     'div',
-                    { ref: function ref(ranges) {
-                            _this2.ranges = ranges;
-                        }, className: 'range-selector', style: { display: 'none' } },
-                    this.props.periods.map(function (period, idx, periods) {
-                        var previousPeriod = periods[idx - 1];
-                        var monthName = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
-                        var markMonth = monthName && idx % 3 !== 0;
-                        return _react2.default.createElement(_rangeElement2.default, _extends({
-                            period: period,
-                            markMonth: markMonth,
-                            monthName: monthName,
-                            onClick: _this2.props.onRangeClick.bind(_this2, period)
-                        }, _this2.props));
-                    })
+                    { className: 'range-selector', ref: function ref(container) {
+                            _this2.container = container;
+                        }, style: { display: 'none' } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'month-selector' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'inner' },
+                            this.props.prevButtonDisabled === true ? _react2.default.createElement(
+                                'button',
+                                { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
+                                _react2.default.createElement('i', { className: 'icon-left' })
+                            ) : _react2.default.createElement(
+                                'button',
+                                { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
+                                _react2.default.createElement('i', { className: 'icon-left' })
+                            ),
+                            this.props.nextButtonDisabled === true ? _react2.default.createElement(
+                                'button',
+                                { type: 'button', disabled: true, className: 'pull-right btn-next' },
+                                _react2.default.createElement('i', { className: 'icon-right' })
+                            ) : _react2.default.createElement(
+                                'button',
+                                { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
+                                _react2.default.createElement('i', { className: 'icon-right' })
+                            ),
+                            this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
+                                'div',
+                                { className: 'holder' },
+                                this.props.period.begin.getDate(),
+                                this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? ''
+                                //TODO: move locale to constants
+                                : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
+                                ' \u2014 ',
+                                this.props.period.end.getDate(),
+                                ' ',
+                                this.props.period.end.toLocaleString('en-us', { month: 'long' })
+                            )
+                            //TODO: remove click after debug
+                            : _react2.default.createElement(
+                                'div',
+                                { className: 'holder' },
+                                'no info'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { ref: function ref(ranges) {
+                                _this2.ranges = ranges;
+                            } },
+                        this.props.periods.map(function (period, idx, periods) {
+                            var previousPeriod = periods[idx - 1];
+                            var monthName = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
+                            var markMonth = monthName && idx % 3 !== 0;
+                            return _react2.default.createElement(_rangeElement2.default, _extends({
+                                period: period,
+                                markMonth: markMonth,
+                                monthName: monthName,
+                                onClick: _this2.props.onRangeClick.bind(_this2, period)
+                            }, _this2.props));
+                        })
+                    )
                 )
             );
         }
