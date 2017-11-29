@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4207a89-9da0-4bd6-bfd1-8cd13520f59d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/period-range/periodRange.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/period-range/periodRangeByMonth.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development/period-range-index.js" afterPath="$PROJECT_DIR$/development/period-range-index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js" afterPath="$PROJECT_DIR$/dist/hrm-comps.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js.map" afterPath="$PROJECT_DIR$/dist/hrm-comps.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/es/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/index.js.map" afterPath="$PROJECT_DIR$/lib/drawer/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/src/period-range-by-month/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range-by-month/range-element/index.js" afterPath="$PROJECT_DIR$/src/period-range-by-month/range-element/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -76,14 +65,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/period-range-by-month/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-352">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/period-range-by-month/range-element/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+              <caret line="15" column="6" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -154,7 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>exports.de</find>
       <find>exports</find>
       <find>export</find>
       <find>style</find>
@@ -184,6 +182,7 @@
       <find>d</find>
       <find>cursor</find>
       <find>holder</find>
+      <find>period</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/drawer/style/index.js" />
         <option value="$PROJECT_DIR$/development/webpack.config.prod.js" />
         <option value="$PROJECT_DIR$/development/tools/server.drawer-development.config.js" />
         <option value="$PROJECT_DIR$/development/tools/server.drawer-development.js" />
@@ -240,9 +238,10 @@
         <option value="$PROJECT_DIR$/development/index.html" />
         <option value="$PROJECT_DIR$/src/styles/period-range.less" />
         <option value="$PROJECT_DIR$/src/period-range/index.js" />
-        <option value="$PROJECT_DIR$/src/period-range-by-month/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/development/period-range-index.js" />
+        <option value="$PROJECT_DIR$/src/period-range-by-month/index.js" />
+        <option value="$PROJECT_DIR$/src/period-range-by-month/range-element/index.js" />
       </list>
     </option>
   </component>
@@ -329,6 +328,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="period-range-by-month" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRM.Ui.Components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRM.Ui.Components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="period-range-by-month" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="range-element" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRM.Ui.Components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRM.Ui.Components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="period-range" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -576,7 +615,7 @@
       <workItem from="1511946131442" duration="9319000" />
       <workItem from="1511964995946" duration="250000" />
       <workItem from="1511965307296" duration="55000" />
-      <workItem from="1511965396572" duration="9323000" />
+      <workItem from="1511965396572" duration="10832000" />
     </task>
     <servers />
   </component>
@@ -613,7 +652,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278415000" />
+    <option name="totallyTimeSpent" value="279924000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -627,7 +666,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22550052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16332982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49578503" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26086956" sideWeight="0.47787145" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.48946258" order="1" side_tool="false" content_ui="tabs" />
@@ -838,13 +877,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/es/period-range/style/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/period-range-by-month/range-element/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es/period-range/style/index.less" />
     <entry file="file://$PROJECT_DIR$/development/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1005,14 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/period-range/periodRangeByMonth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
@@ -1049,11 +1073,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/period-range-by-month/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="225">
+          <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/period-range-by-month/range-element/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
