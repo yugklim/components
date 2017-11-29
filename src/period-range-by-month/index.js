@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RangeElement from '../period-range-by-month/range-element'
+import RangeElement from './range-element'
 
 export default class PeriodRangeByMonth extends React.Component {
     static defaultProps = {

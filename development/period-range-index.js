@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 //import '../src/styles/main.less';
 //import Drawer from "../dist";
-import Drawer from "../src/drawer";
-import {PeriodRange, PeriodRangeByMonth} from "../src/period-range";
+import Drawer from '../src/drawer';
+import PeriodRange from '../src/period-range';
+import PeriodRangeByMonth from '../src/period-range-by-month';
 
 const periods = [
     {
