@@ -24,6 +24,7 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: '.\\src\\drawer', to: '..\\es\\drawer', copyUnmodified: true },
             { from: '.\\src\\period-range', to: '..\\es\\period-range', copyUnmodified: true },
+            { from: '.\\src\\period-range-by-month', to: '..\\es\\period-range-by-month', copyUnmodified: true },
             { from: '.\\src\\styles', to: '..\\es\\styles', copyUnmodified: true },
             { from: '.\\src\\fonts', to: '..\\es\\fonts', copyUnmodified: true }
         ])

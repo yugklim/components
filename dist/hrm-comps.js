@@ -696,11 +696,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(17)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(16)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(18)();
+  module.exports = __webpack_require__(17)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -730,11 +730,13 @@ var _drawer2 = _interopRequireDefault(_drawer);
 
 var _periodRange = __webpack_require__(15);
 
+var _periodRangeByMonth = __webpack_require__(18);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Drawer = _drawer2.default;
 exports.PeriodRange = _periodRange.PeriodRange;
-exports.PeriodRangeByMonth = _periodRange.PeriodRangeByMonth;
+exports.PeriodRangeByMonth = _periodRangeByMonth.PeriodRangeByMonth;
 
 /***/ }),
 /* 12 */
@@ -2555,37 +2557,6 @@ module.exports = ReactEntry;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _periodRange = __webpack_require__(16);
-
-Object.defineProperty(exports, 'PeriodRange', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_periodRange).default;
-  }
-});
-
-var _periodRangeByMonth = __webpack_require__(19);
-
-Object.defineProperty(exports, 'PeriodRangeByMonth', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_periodRangeByMonth).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -2692,7 +2663,7 @@ PeriodRange.propTypes = {
 };
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3212,7 +3183,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3278,7 +3249,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3300,7 +3271,7 @@ var _propTypes = __webpack_require__(9);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _rangeElement = __webpack_require__(20);
+var _rangeElement = __webpack_require__(19);
 
 var _rangeElement2 = _interopRequireDefault(_rangeElement);
 
@@ -3324,12 +3295,12 @@ var PeriodRangeByMonth = function (_React$Component) {
     _createClass(PeriodRangeByMonth, [{
         key: 'onMonthClick',
         value: function onMonthClick() {
-            if (this.container.className === 'range-selector-shortened') {
-                this.container.className = 'range-selector';
-                this.ranges.style.visibility = 'visible';
+            if (this.ranges.style.display == 'none') {
+                //this.container.className = 'range-selector';
+                this.ranges.style.display = 'block';
             } else {
-                this.container.className = 'range-selector-shortened';
-                this.ranges.style.visibility = 'hidden';
+                //this.container.className = 'range-selector-shortened';
+                this.ranges.style.display = 'none';
             }
         }
     }, {
@@ -3397,7 +3368,7 @@ var PeriodRangeByMonth = function (_React$Component) {
                     'div',
                     { ref: function ref(ranges) {
                             _this2.ranges = ranges;
-                        }, style: { visibility: 'hidden' } },
+                        }, className: 'range-selector', style: { display: 'none' } },
                     this.props.periods.map(function (period, idx, periods) {
                         var previousPeriod = periods[idx - 1];
                         var monthName = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
@@ -3442,7 +3413,7 @@ PeriodRangeByMonth.propTypes = {
 };
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

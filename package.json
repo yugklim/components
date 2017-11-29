@@ -1,6 +1,6 @@
 {
   "name": "hrm-comps",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "scripts": {
     "test": "jest",
     "build:dist": "webpack --config webpack.dist.config.js",
@@ -9,7 +9,8 @@
     "build:lib-style": "webpack --config webpack.lib.style.config.js",
     "build:drawer.css": "webpack --config webpack.lib.drawer.css.config.js",
     "build:period-range.css": "webpack --config webpack.lib.period-range.css.config.js",
-    "build": "npm run build:dist && npm run build:dist-css && npm run build:lib && npm run build:lib-style && npm run build:drawer.css && npm run build:period-range.css && npm run generate-components.less",
+    "build:period-range-by-month.css": "webpack --config webpack.lib.period-range-by-month.css.config.js",
+    "build": "npm run build:dist && npm run build:dist-css && npm run build:lib && npm run build:lib-style && npm run build:drawer.css && npm run build:period-range.css && npm run build:period-range-by-month.css && npm run generate-components.less",
     "generate-components.less": "node ./scripts/generate-components.less.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",

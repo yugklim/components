@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RangeElement from './range-element'
-import PropRange from '../period-range'
 
 export default class PeriodRangeByMonth extends React.Component {
     static defaultProps = {
@@ -15,14 +14,14 @@ export default class PeriodRangeByMonth extends React.Component {
         nextButtonDisabled: false
     };
 
-    toggleRanges() {
-        if (this.container.style.display == 'none') {
+    onMonthClick() {
+        if (this.ranges.style.display == 'none') {
             //this.container.className = 'range-selector';
-            this.container.style.display= 'block';
+            this.ranges.style.display= 'block';
         }
         else {
             //this.container.className = 'range-selector-shortened';
-            this.container.style.display = 'none';
+            this.ranges.style.display = 'none';
         }
     }
 
@@ -33,10 +32,9 @@ export default class PeriodRangeByMonth extends React.Component {
     }
 
     render() {
+
         return (
-            <div>
-                <div><PropRange onPeriodClick={this.toggleRanges.bind(this)}/></div>
-            <div className={'range-selector'} ref={(container) => { this.container=container; }}  style={{display:'none'}}>
+            <div className={'range-selector-shortened'} ref={(container) => { this.container=container; }}>
                 <div className='month-selector'>
                     <div className='inner'>
                         {
@@ -59,18 +57,18 @@ export default class PeriodRangeByMonth extends React.Component {
                         }
                         {
                             (this.props.period && this.props.period.begin && this.props.period.end)?
-                                <div className='holder'>{this.props.period.begin.getDate()}
+                                <div className='holder' onClick={this.onMonthClick.bind(this)}>{this.props.period.begin.getDate()}
                                     {(this.props.period.begin.getMonth() == this.props.period.end.getMonth())?
                                         ''
                                         //TODO: move locale to constants
                                         :` ${this.props.period.begin.toLocaleString('en-us', { month: 'long' })}`} — {this.props.period.end.getDate()} {this.props.period.end.toLocaleString('en-us', { month: 'long' })}
                                 </div>
                                 //TODO: remove click after debug
-                                :<div className='holder'>no info</div>
+                                :<div className='holder' onClick={this.onMonthClick.bind(this)}>no info</div>
                         }
                     </div>
                 </div>
-                <div ref={(ranges) => { this.ranges= ranges; }} >
+                <div ref={(ranges) => { this.ranges= ranges; }} className='range-selector' style={{display:'none'}}>
                     {
                         this.props.periods.map((period, idx, periods) => {
                                 const previousPeriod = periods[idx-1];
@@ -88,7 +86,6 @@ export default class PeriodRangeByMonth extends React.Component {
                         )
                     }
                 </div>
-            </div>
             </div>
         );
     }

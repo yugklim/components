@@ -5,7 +5,8 @@ module.exports = {
     devtool: "source-map",
     entry: {
         'drawer': '.\\src\\drawer\\index.js',
-        'period-range': '.\\src\\period-range\\index.js'
+        'period-range': '.\\src\\period-range\\index.js',
+        'period-range-by-month': '.\\src\\period-range-by-month\\index.js'
     },
     resolve: {
         modules: [

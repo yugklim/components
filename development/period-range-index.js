@@ -48,16 +48,27 @@ const periods = [
 ReactDOM.render(
     <div style={{marginLeft: '55px'}}>
         <div><PeriodRange /></div>
-        <div><PeriodRangeByMonth periods={periods}/></div>
-        <p>AAAA</p>
-        <p>BBBB</p>
-        <p>CCCC</p>
-        <p>AAAA</p>
-        <p>BBBB</p>
-        <p>CCCC</p>
-        <p>AAAA</p>
-        <p>BBBB</p>
-        <p>CCCC</p>
+        <div style={{maxHeight: '50px'}}>
+            <div style={{marginLeft: '25px'}}><PeriodRangeByMonth periods={periods}/></div>
+            <p>AAAA</p>
+            <p>BBBB</p>
+            <p>CCCC</p>
+            <p>AAAA</p>
+            <p>BBBB</p>
+            <p>CCCC</p>
+            <p>AAAA</p>
+            <p>BBBB</p>
+            <p>CCCC</p>
+            <p>AAAA</p>
+            <p>BBBB</p>
+            <p>CCCC</p>
+            <p>AAAA</p>
+            <p>BBBB</p>
+            <p>CCCC</p>
+            <p>AAAA</p>
+            <p>BBBB</p>
+            <p>CCCC</p>
+        </div>
         {/*<PeriodRange prevButtonDisabled={true} />*/}
         {/*<PeriodRange nextButtonDisabled={true}/>*/}
     </div>, document.getElementById('app'));

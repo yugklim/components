@@ -27,6 +27,8 @@ module.exports = {
             { from: '.\\src\\drawer\\style\\index.js', to: '.\\drawer\\style\\index.js' },
             { from: '.\\src\\period-range\\style\\index.less', to: '.\\period-range\\style\\index.less' },
             { from: '.\\src\\period-range\\style\\index.js', to: '.\\period-range\\style\\index.js' },
+            { from: '.\\src\\period-range-by-month\\style\\index.less', to: '.\\period-range-by-month\\style\\index.less' },
+            { from: '.\\src\\period-range-by-month\\style\\index.js', to: '.\\period-range-by-month\\style\\index.js' },
             { from: '.\\src\\styles', to: '.\\styles' },
             { from: '.\\src\\fonts', to: '.\\fonts' }
         ])
