@@ -44,12 +44,18 @@ const periods = [
         begin: new Date(2017, 6, 8),
         end: new Date(2017, 6, 14)
     }
-    ]
+    ];
+
+const period = {
+    begin: new Date (2017, 3, 11),
+    end: new Date (2017, 3, 18)
+};
+
 ReactDOM.render(
     <div style={{marginLeft: '55px'}}>
-        <div><PeriodRange /></div>
+        <div><PeriodRange period={period} /></div>
         <div style={{maxHeight: '50px'}}>
-            <div style={{marginLeft: '25px'}}><PeriodRangeByMonth periods={periods}/></div>
+            <div style={{marginLeft: '25px'}}><PeriodRangeByMonth period={period} periods={periods}/></div>
             <p>AAAA</p>
             <p>BBBB</p>
             <p>CCCC</p>

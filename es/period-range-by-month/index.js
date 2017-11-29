@@ -35,7 +35,9 @@ export default class PeriodRangeByMonth extends React.Component {
     render() {
         return (
             <div>
-                <div><PropRange onPeriodClick={this.toggleRanges.bind(this)}/></div>
+                <div>
+                    <PropRange onPeriodClick={this.toggleRanges.bind(this)} {...this.props}/>
+                </div>
             <div className={'range-selector'} ref={(container) => { this.container=container; }}  style={{display:'none'}}>
                 <div className='month-selector'>
                     <div className='inner'>
