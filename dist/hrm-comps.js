@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -377,9 +377,9 @@ module.exports = emptyFunction;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(12);
-} else {
   module.exports = __webpack_require__(13);
+} else {
+  module.exports = __webpack_require__(14);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -672,11 +672,48 @@ module.exports = checkPropTypes;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(10);
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
 
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(17)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(18)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(11);
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -685,23 +722,22 @@ module.exports = __webpack_require__(10);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.PeriodRange = exports.Drawer = undefined;
+exports.PeriodRangeByMonth = exports.PeriodRange = exports.Drawer = undefined;
 
-var _drawer = __webpack_require__(11);
+var _drawer = __webpack_require__(12);
 
 var _drawer2 = _interopRequireDefault(_drawer);
 
-var _periodRange = __webpack_require__(14);
-
-var _periodRange2 = _interopRequireDefault(_periodRange);
+var _periodRange = __webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Drawer = _drawer2.default;
-exports.PeriodRange = _periodRange2.default;
+exports.PeriodRange = _periodRange.PeriodRange;
+exports.PeriodRangeByMonth = _periodRange.PeriodRangeByMonth;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -776,7 +812,7 @@ Drawer.defaultProps = {
 exports.default = Drawer;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -806,7 +842,7 @@ module.exports={Children:{map:S.map,forEach:S.forEach,count:S.count,toArray:S.to
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2512,7 +2548,38 @@ module.exports = ReactEntry;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 14 */
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _periodRange = __webpack_require__(16);
+
+Object.defineProperty(exports, 'PeriodRange', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_periodRange).default;
+  }
+});
+
+var _periodRangeByMonth = __webpack_require__(19);
+
+Object.defineProperty(exports, 'PeriodRangeByMonth', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_periodRangeByMonth).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2522,21 +2589,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(15);
+var _propTypes = __webpack_require__(9);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _rangeElement = __webpack_require__(18);
-
-var _rangeElement2 = _interopRequireDefault(_rangeElement);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2556,17 +2617,6 @@ var PeriodRange = function (_React$Component) {
     }
 
     _createClass(PeriodRange, [{
-        key: 'onMonthClick',
-        value: function onMonthClick() {
-            if (this.container.className === 'range-selector-shortened') {
-                this.container.className = 'range-selector';
-                this.ranges.style.visibility = 'visible';
-            } else {
-                this.container.className = 'range-selector-shortened';
-                this.ranges.style.visibility = 'hidden';
-            }
-        }
-    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
@@ -2576,73 +2626,40 @@ var PeriodRange = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             return _react2.default.createElement(
                 'div',
-                { className: 'range-selector-shortened', ref: function ref(container) {
-                        _this2.container = container;
-                    } },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'month-selector' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'inner' },
-                        this.props.prevButtonDisabled === true ? _react2.default.createElement(
-                            'button',
-                            { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
-                            _react2.default.createElement('i', { className: 'icon-left' })
-                        ) : _react2.default.createElement(
-                            'button',
-                            { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
-                            _react2.default.createElement('i', { className: 'icon-left' })
-                        ),
-                        this.props.nextButtonDisabled === true ? _react2.default.createElement(
-                            'button',
-                            { type: 'button', disabled: true, className: 'pull-right btn-next' },
-                            _react2.default.createElement('i', { className: 'icon-right' })
-                        ) : _react2.default.createElement(
-                            'button',
-                            { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
-                            _react2.default.createElement('i', { className: 'icon-right' })
-                        ),
-                        this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
-                            'div',
-                            { className: 'holder', onClick: this.onMonthClick.bind(this) },
-                            this.props.period.begin.getDate(),
-                            this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? ''
-                            //TODO: move locale to constants
-                            : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
-                            ' \u2014 ',
-                            this.props.period.end.getDate(),
-                            ' ',
-                            this.props.period.end.toLocaleString('en-us', { month: 'long' })
-                        )
-                        //TODO: remove click after debug
-                        : _react2.default.createElement(
-                            'div',
-                            { className: 'holder', onClick: this.onMonthClick.bind(this) },
-                            'no info'
-                        )
-                    )
+                { className: 'date-range' },
+                this.props.prevButtonDisabled === true ? _react2.default.createElement(
+                    'button',
+                    { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
+                    _react2.default.createElement('i', { className: 'icon-left' })
+                ) : _react2.default.createElement(
+                    'button',
+                    { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
+                    _react2.default.createElement('i', { className: 'icon-left' })
                 ),
-                _react2.default.createElement(
+                this.props.nextButtonDisabled === true ? _react2.default.createElement(
+                    'button',
+                    { type: 'button', disabled: true, className: 'pull-right btn-next' },
+                    _react2.default.createElement('i', { className: 'icon-right' })
+                ) : _react2.default.createElement(
+                    'button',
+                    { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
+                    _react2.default.createElement('i', { className: 'icon-right' })
+                ),
+                this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
                     'div',
-                    { ref: function ref(ranges) {
-                            _this2.ranges = ranges;
-                        }, style: { visibility: 'hidden' } },
-                    this.props.periods.map(function (period, idx, periods) {
-                        var previousPeriod = periods[idx - 1];
-                        var monthName = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
-                        var markMonth = monthName && idx % 3 !== 0;
-                        return _react2.default.createElement(_rangeElement2.default, _extends({
-                            period: period,
-                            markMonth: markMonth,
-                            monthName: monthName,
-                            onClick: _this2.props.onRangeClick.bind(_this2, period)
-                        }, _this2.props));
-                    })
+                    { className: 'holder' },
+                    this.props.period.begin.getDate(),
+                    this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? '' : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
+                    ' \u2014 ',
+                    this.props.period.end.getDate(),
+                    ' ',
+                    this.props.period.end.toLocaleString('en-us', { month: 'long' })
+                ) : _react2.default.createElement(
+                    'div',
+                    { className: 'holder' },
+                    'no info'
                 )
             );
         }
@@ -2652,17 +2669,16 @@ var PeriodRange = function (_React$Component) {
 }(_react2.default.Component);
 
 PeriodRange.defaultProps = {
-    periods: [],
+    period: {
+        begin: new Date(),
+        end: new Date()
+    },
     type: '',
     onPrevClick: function onPrevClick() {
         console.log('onPrevClick');
     },
     onNextClick: function onNextClick() {
         console.log('onNextClick');
-    },
-    // eslint-disable-next-line no-unused-vars
-    onRangeClick: function onRangeClick(period) {
-        console.log('onRangeClick');
     },
     prevButtonDisabled: false,
     nextButtonDisabled: false
@@ -2676,44 +2692,7 @@ PeriodRange.propTypes = {
 };
 
 /***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(16)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(17)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3233,7 +3212,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3299,7 +3278,171 @@ module.exports = function() {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(9);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _rangeElement = __webpack_require__(20);
+
+var _rangeElement2 = _interopRequireDefault(_rangeElement);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PeriodRangeByMonth = function (_React$Component) {
+    _inherits(PeriodRangeByMonth, _React$Component);
+
+    function PeriodRangeByMonth() {
+        _classCallCheck(this, PeriodRangeByMonth);
+
+        return _possibleConstructorReturn(this, (PeriodRangeByMonth.__proto__ || Object.getPrototypeOf(PeriodRangeByMonth)).apply(this, arguments));
+    }
+
+    _createClass(PeriodRangeByMonth, [{
+        key: 'onMonthClick',
+        value: function onMonthClick() {
+            if (this.container.className === 'range-selector-shortened') {
+                this.container.className = 'range-selector';
+                this.ranges.style.visibility = 'visible';
+            } else {
+                this.container.className = 'range-selector-shortened';
+                this.ranges.style.visibility = 'hidden';
+            }
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
+                this.props.onDidMount();
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'range-selector-shortened', ref: function ref(container) {
+                        _this2.container = container;
+                    } },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'month-selector' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'inner' },
+                        this.props.prevButtonDisabled === true ? _react2.default.createElement(
+                            'button',
+                            { type: 'button', disabled: true, className: 'pull-left btn-prev-disabled' },
+                            _react2.default.createElement('i', { className: 'icon-left' })
+                        ) : _react2.default.createElement(
+                            'button',
+                            { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
+                            _react2.default.createElement('i', { className: 'icon-left' })
+                        ),
+                        this.props.nextButtonDisabled === true ? _react2.default.createElement(
+                            'button',
+                            { type: 'button', disabled: true, className: 'pull-right btn-next' },
+                            _react2.default.createElement('i', { className: 'icon-right' })
+                        ) : _react2.default.createElement(
+                            'button',
+                            { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
+                            _react2.default.createElement('i', { className: 'icon-right' })
+                        ),
+                        this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
+                            'div',
+                            { className: 'holder', onClick: this.onMonthClick.bind(this) },
+                            this.props.period.begin.getDate(),
+                            this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? ''
+                            //TODO: move locale to constants
+                            : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
+                            ' \u2014 ',
+                            this.props.period.end.getDate(),
+                            ' ',
+                            this.props.period.end.toLocaleString('en-us', { month: 'long' })
+                        )
+                        //TODO: remove click after debug
+                        : _react2.default.createElement(
+                            'div',
+                            { className: 'holder', onClick: this.onMonthClick.bind(this) },
+                            'no info'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { ref: function ref(ranges) {
+                            _this2.ranges = ranges;
+                        }, style: { visibility: 'hidden' } },
+                    this.props.periods.map(function (period, idx, periods) {
+                        var previousPeriod = periods[idx - 1];
+                        var monthName = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
+                        var markMonth = monthName && idx % 3 !== 0;
+                        return _react2.default.createElement(_rangeElement2.default, _extends({
+                            period: period,
+                            markMonth: markMonth,
+                            monthName: monthName,
+                            onClick: _this2.props.onRangeClick.bind(_this2, period)
+                        }, _this2.props));
+                    })
+                )
+            );
+        }
+    }]);
+
+    return PeriodRangeByMonth;
+}(_react2.default.Component);
+
+PeriodRangeByMonth.defaultProps = {
+    periods: [],
+    type: '',
+    onPrevClick: function onPrevClick() {
+        console.log('onPrevClick');
+    },
+    onNextClick: function onNextClick() {
+        console.log('onNextClick');
+    },
+    // eslint-disable-next-line no-unused-vars
+    onRangeClick: function onRangeClick(period) {
+        console.log('onRangeClick');
+    },
+    prevButtonDisabled: false,
+    nextButtonDisabled: false
+};
+exports.default = PeriodRangeByMonth;
+
+
+PeriodRangeByMonth.propTypes = {
+    prevButtonDisabled: _propTypes2.default.bool,
+    nextButtonDisabled: _propTypes2.default.bool
+};
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

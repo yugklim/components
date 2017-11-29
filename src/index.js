@@ -1,4 +1,4 @@
 import Drawer from './drawer'
-import PeriodRange from './period-range'
+import {PeriodRange, PeriodRangeByMonth} from './period-range'
+export {Drawer, PeriodRange, PeriodRangeByMonth}
 
-export {Drawer, PeriodRange}

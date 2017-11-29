@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 //import '../src/styles/main.less';
 //import Drawer from "../dist";
 import Drawer from "../src/drawer";
-import PeriodRange from "../src/period-range";
+import {PeriodRange, PeriodRangeByMonth} from "../src/period-range";
 
 const periods = [
     {
@@ -46,7 +46,17 @@ const periods = [
     ]
 ReactDOM.render(
     <div style={{marginLeft: '55px'}}>
-        <PeriodRange periods={periods}/>
+        <div><PeriodRange /></div>
+        <div><PeriodRangeByMonth periods={periods}/></div>
+        <p>AAAA</p>
+        <p>BBBB</p>
+        <p>CCCC</p>
+        <p>AAAA</p>
+        <p>BBBB</p>
+        <p>CCCC</p>
+        <p>AAAA</p>
+        <p>BBBB</p>
+        <p>CCCC</p>
         {/*<PeriodRange prevButtonDisabled={true} />*/}
         {/*<PeriodRange nextButtonDisabled={true}/>*/}
     </div>, document.getElementById('app'));
