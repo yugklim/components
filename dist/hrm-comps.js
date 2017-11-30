@@ -3370,20 +3370,13 @@ var PeriodRangeByMonth = function (_React$Component) {
                                 { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
                                 _react2.default.createElement('i', { className: 'icon-right' })
                             ),
-                            this.props.period && this.props.period.begin && this.props.period.end ? _react2.default.createElement(
+                            this.props.period && this.props.period.begin ? _react2.default.createElement(
                                 'div',
                                 { className: 'holder' },
-                                this.props.period.begin.getDate(),
-                                this.props.period.begin.getMonth() == this.props.period.end.getMonth() ? ''
-                                //TODO: move locale to constants
-                                : ' ' + this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
-                                ' \u2014 ',
-                                this.props.period.end.getDate(),
+                                this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
                                 ' ',
-                                this.props.period.end.toLocaleString('en-us', { month: 'long' })
-                            )
-                            //TODO: remove click after debug
-                            : _react2.default.createElement(
+                                this.props.period.begin.getFullYear()
+                            ) : _react2.default.createElement(
                                 'div',
                                 { className: 'holder' },
                                 'no info'
@@ -3395,15 +3388,15 @@ var PeriodRangeByMonth = function (_React$Component) {
                         { ref: function ref(ranges) {
                                 _this2.ranges = ranges;
                             } },
-                        this.props.periods.map(function (period, idx, periods) {
+                        this.props.periods.map(function (proposedPeriod, idx, periods) {
                             var previousPeriod = periods[idx - 1];
-                            var monthName = !previousPeriod || period.begin.getMonth() !== previousPeriod.begin.getMonth();
+                            var monthName = !previousPeriod || proposedPeriod.begin.getMonth() !== previousPeriod.begin.getMonth();
                             var markMonth = monthName && idx % 3 !== 0;
                             return _react2.default.createElement(_rangeElement2.default, _extends({
-                                period: period,
+                                proposedPeriod: proposedPeriod,
                                 markMonth: markMonth,
                                 monthName: monthName,
-                                onClick: _this2.props.onRangeClick.bind(_this2, period)
+                                onClick: _this2.props.onRangeClick.bind(_this2, proposedPeriod)
                             }, _this2.props));
                         })
                     )
@@ -3417,6 +3410,7 @@ var PeriodRangeByMonth = function (_React$Component) {
 
 PeriodRangeByMonth.defaultProps = {
     periods: [],
+    period: {},
     type: '',
     onPrevClick: function onPrevClick() {
         console.log('onPrevClick');
@@ -3482,7 +3476,7 @@ var RangeElement = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'period-month' + (this.props.markMonth ? ' month-begins' : '') },
-                    this.props.monthName ? this.props.period.begin.toLocaleString('en-us', { month: 'long' }).toUpperCase() : null
+                    this.props.monthName ? this.props.proposedPeriod.begin.toLocaleString('en-us', { month: 'long' }).toUpperCase() : null
                 ),
                 _react2.default.createElement(
                     'div',
@@ -3490,9 +3484,9 @@ var RangeElement = function (_React$Component) {
                     _react2.default.createElement(
                         'p',
                         null,
-                        this.props.period.begin.getDate(),
+                        this.props.proposedPeriod.begin.getDate(),
                         '-',
-                        this.props.period.end.getDate()
+                        this.props.proposedPeriod.end.getDate()
                     )
                 )
             );
@@ -3502,6 +3496,12 @@ var RangeElement = function (_React$Component) {
     return RangeElement;
 }(_react2.default.Component);
 
+RangeElement.defaultProps = {
+    proposedPeriod: {
+        begin: new Date(),
+        end: new Date()
+    }
+};
 exports.default = RangeElement;
 
 /***/ })
