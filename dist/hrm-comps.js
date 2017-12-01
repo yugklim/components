@@ -3356,7 +3356,7 @@ var PeriodRangeByMonth = function (_React$Component) {
             var _this2 = this;
 
             var complementPeriods = this.context.complementPeriods;
-            var complementedPeriods = complementPeriods ? complementPeriods({ startDate: this.state.monthSelected }, this.props.periods) : this.props.periods;
+            var complementedPeriods = complementPeriods ? complementPeriods(this.state.monthSelected, this.props.periods) : this.props.periods;
             return _react2.default.createElement(
                 'div',
                 null,

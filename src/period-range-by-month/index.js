@@ -58,7 +58,7 @@ export default class PeriodRangeByMonth extends React.Component {
 
     render() {
         const complementPeriods = this.context.complementPeriods;
-        const complementedPeriods = complementPeriods? complementPeriods({startDate:this.state.monthSelected}, this.props.periods): this.props.periods;
+        const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, this.props.periods): this.props.periods;
         return (
             <div>
                 <div>
