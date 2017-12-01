@@ -9,12 +9,16 @@ export default class PeriodRangeByMonth extends React.Component {
         periods: [],
         period: {},
         type: '',
-        onPrevMonthClick: () => {console.log ('onPrevClick')},
-        onNextMonthClick: () => {console.log ('onNextClick')},
+        onPreviousMonthClick: (monthSelected) => {console.log (`'onPrevClick' - ${monthSelected} `)},
+        onNextMonthClick: (monthSelected) => {console.log (`'onNextClick' - ${monthSelected} `)},
         // eslint-disable-next-line no-unused-vars
         onRangeClick: (period) => {console.log ('onRangeClick')},
         prevButtonDisabled: false,
         nextButtonDisabled: false
+    };
+
+    static contextTypes = {
+        complementPeriods: PropTypes.func
     };
 
     constructor(props) {
@@ -33,15 +37,17 @@ export default class PeriodRangeByMonth extends React.Component {
     onNextMonthClick(e) {
         let {monthSelected} = this.state;
         monthSelected.setMonth(monthSelected.getMonth()+1);
+        monthSelected.setDate(1);
         this.setState({ monthSelected: monthSelected });
-        if (this.props.onNextMonthClick) this.props.onNextMonthClick(e);
+        if (this.props.onNextMonthClick) this.props.onNextMonthClick(monthSelected, e);
     }
 
     onPrevMonthClick(e) {
         let {monthSelected} = this.state;
         monthSelected.setMonth(monthSelected.getMonth()-1);
+        monthSelected.setDate(1)
         this.setState({ monthSelected: monthSelected });
-        if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(e);
+        if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(monthSelected, e);
     }
 
     componentDidMount() {
@@ -51,6 +57,8 @@ export default class PeriodRangeByMonth extends React.Component {
     }
 
     render() {
+        const complementPeriods = this.context.complementPeriods;
+        const complementedPeriods = complementPeriods? complementPeriods({startDate:this.state.monthSelected}, this.props.periods): this.props.periods;
         return (
             <div>
                 <div>
@@ -89,7 +97,7 @@ export default class PeriodRangeByMonth extends React.Component {
                 </div>
                 <div ref={(ranges) => { this.ranges= ranges; }} >
                     {
-                        this.props.periods.map((proposedPeriod, idx, periods) => {
+                        complementedPeriods.map((proposedPeriod, idx, periods) => {
                                 const previousPeriod = periods[idx-1];
                                 const monthName = (!previousPeriod || proposedPeriod.begin.getMonth() !== previousPeriod.begin.getMonth());
                                 const markMonth = monthName && (idx%3 !== 0);

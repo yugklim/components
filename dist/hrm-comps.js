@@ -3329,8 +3329,9 @@ var PeriodRangeByMonth = function (_React$Component) {
             var monthSelected = this.state.monthSelected;
 
             monthSelected.setMonth(monthSelected.getMonth() + 1);
+            monthSelected.setDate(1);
             this.setState({ monthSelected: monthSelected });
-            if (this.props.onNextMonthClick) this.props.onNextMonthClick(e);
+            if (this.props.onNextMonthClick) this.props.onNextMonthClick(monthSelected, e);
         }
     }, {
         key: 'onPrevMonthClick',
@@ -3338,8 +3339,9 @@ var PeriodRangeByMonth = function (_React$Component) {
             var monthSelected = this.state.monthSelected;
 
             monthSelected.setMonth(monthSelected.getMonth() - 1);
+            monthSelected.setDate(1);
             this.setState({ monthSelected: monthSelected });
-            if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(e);
+            if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(monthSelected, e);
         }
     }, {
         key: 'componentDidMount',
@@ -3353,6 +3355,8 @@ var PeriodRangeByMonth = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
+            var complementPeriods = this.context.complementPeriods;
+            var complementedPeriods = complementPeriods ? complementPeriods({ startDate: this.state.monthSelected }, this.props.periods) : this.props.periods;
             return _react2.default.createElement(
                 'div',
                 null,
@@ -3408,11 +3412,12 @@ var PeriodRangeByMonth = function (_React$Component) {
                         { ref: function ref(ranges) {
                                 _this2.ranges = ranges;
                             } },
-                        this.props.periods.map(function (proposedPeriod, idx, periods) {
+                        complementedPeriods.map(function (proposedPeriod, idx, periods) {
                             var previousPeriod = periods[idx - 1];
                             var monthName = !previousPeriod || proposedPeriod.begin.getMonth() !== previousPeriod.begin.getMonth();
                             var markMonth = monthName && idx % 3 !== 0;
                             return _react2.default.createElement(_rangeElement2.default, _extends({
+                                key: 'range-' + idx,
                                 proposedPeriod: proposedPeriod,
                                 markMonth: markMonth,
                                 monthName: monthName,
@@ -3432,11 +3437,11 @@ PeriodRangeByMonth.defaultProps = {
     periods: [],
     period: {},
     type: '',
-    onPrevMonthClick: function onPrevMonthClick() {
-        console.log('onPrevClick');
+    onPreviousMonthClick: function onPreviousMonthClick(monthSelected) {
+        console.log('\'onPrevClick\' - ' + monthSelected + ' ');
     },
-    onNextMonthClick: function onNextMonthClick() {
-        console.log('onNextClick');
+    onNextMonthClick: function onNextMonthClick(monthSelected) {
+        console.log('\'onNextClick\' - ' + monthSelected + ' ');
     },
     // eslint-disable-next-line no-unused-vars
     onRangeClick: function onRangeClick(period) {
@@ -3444,6 +3449,9 @@ PeriodRangeByMonth.defaultProps = {
     },
     prevButtonDisabled: false,
     nextButtonDisabled: false
+};
+PeriodRangeByMonth.contextTypes = {
+    complementPeriods: _propTypes2.default.func
 };
 exports.default = PeriodRangeByMonth;
 
