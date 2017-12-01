@@ -4,27 +4,44 @@ import RangeElement from './range-element'
 import PropRange from '../period-range'
 
 export default class PeriodRangeByMonth extends React.Component {
+
     static defaultProps = {
         periods: [],
         period: {},
         type: '',
-        onPrevClick: () => {console.log ('onPrevClick')},
-        onNextClick: () => {console.log ('onNextClick')},
+        onPrevMonthClick: () => {console.log ('onPrevClick')},
+        onNextMonthClick: () => {console.log ('onNextClick')},
         // eslint-disable-next-line no-unused-vars
         onRangeClick: (period) => {console.log ('onRangeClick')},
         prevButtonDisabled: false,
         nextButtonDisabled: false
     };
 
+    constructor(props) {
+        super(props);
+        this.state = { monthSelected: new Date(props.period.begin||props.period.startDate) }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({ monthSelected: new Date(nextProps.period.begin||nextProps.period.startDate)});
+    }
+
     toggleRanges() {
-        if (this.container.style.display == 'none') {
-            //this.container.className = 'range-selector';
-            this.container.style.display= 'block';
-        }
-        else {
-            //this.container.className = 'range-selector-shortened';
-            this.container.style.display = 'none';
-        }
+        this.container.style.display = (this.container.style.display=='block')?'none':'block';
+    }
+
+    onNextMonthClick(e) {
+        let {monthSelected} = this.state;
+        monthSelected.setMonth(monthSelected.getMonth()+1);
+        this.setState({ monthSelected: monthSelected });
+        if (this.props.onNextMonthClick) this.props.onNextMonthClick(e);
+    }
+
+    onPrevMonthClick(e) {
+        let {monthSelected} = this.state;
+        monthSelected.setMonth(monthSelected.getMonth()-1);
+        this.setState({ monthSelected: monthSelected });
+        if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(e);
     }
 
     componentDidMount() {
@@ -47,7 +64,7 @@ export default class PeriodRangeByMonth extends React.Component {
                                 <button type='button' disabled className='pull-left btn-prev-disabled'>
                                     <i className='icon-left'></i>
                                 </button>
-                                :<button type='button' className='pull-left btn-prev' onClick={this.props.onPrevClick}>
+                                :<button type='button' className='pull-left btn-prev' onClick={this.onPrevMonthClick.bind(this)}>
                                 <i className='icon-left'></i>
                             </button>
                         }
@@ -56,14 +73,15 @@ export default class PeriodRangeByMonth extends React.Component {
                                 <button type='button' disabled className='pull-right btn-next'>
                                     <i className='icon-right'></i>
                                 </button>
-                                :<button type='button' className='pull-right btn-next' onClick={this.props.onNextClick}>
+                                :<button type='button' className='pull-right btn-next' onClick={this.onNextMonthClick.bind(this)}>
                                 <i className='icon-right'></i>
                             </button>
                         }
                         {
                             (this.props.period && this.props.period.begin)?
                                 <div className='holder'>
-                                    {this.props.period.begin.toLocaleString('en-us', { month: 'long' })} {this.props.period.begin.getFullYear()}
+                                    {/*TODO put locale to const*/}
+                                    {this.state.monthSelected.toLocaleString('en-us', { month: 'long' })} {this.state.monthSelected.getFullYear()}
                                 </div>
                                 :<div className='holder'>no info</div>
                         }
@@ -76,6 +94,7 @@ export default class PeriodRangeByMonth extends React.Component {
                                 const monthName = (!previousPeriod || proposedPeriod.begin.getMonth() !== previousPeriod.begin.getMonth());
                                 const markMonth = monthName && (idx%3 !== 0);
                                 return <RangeElement
+                                    key={`range-${idx}`}
                                     proposedPeriod={proposedPeriod}
                                     markMonth={markMonth}
                                     monthName={monthName}

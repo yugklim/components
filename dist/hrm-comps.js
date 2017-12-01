@@ -3304,22 +3304,42 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var PeriodRangeByMonth = function (_React$Component) {
     _inherits(PeriodRangeByMonth, _React$Component);
 
-    function PeriodRangeByMonth() {
+    function PeriodRangeByMonth(props) {
         _classCallCheck(this, PeriodRangeByMonth);
 
-        return _possibleConstructorReturn(this, (PeriodRangeByMonth.__proto__ || Object.getPrototypeOf(PeriodRangeByMonth)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (PeriodRangeByMonth.__proto__ || Object.getPrototypeOf(PeriodRangeByMonth)).call(this, props));
+
+        _this.state = { monthSelected: new Date(props.period.begin || props.period.startDate) };
+        return _this;
     }
 
     _createClass(PeriodRangeByMonth, [{
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            this.setState({ monthSelected: new Date(nextProps.period.begin || nextProps.period.startDate) });
+        }
+    }, {
         key: 'toggleRanges',
         value: function toggleRanges() {
-            if (this.container.style.display == 'none') {
-                //this.container.className = 'range-selector';
-                this.container.style.display = 'block';
-            } else {
-                //this.container.className = 'range-selector-shortened';
-                this.container.style.display = 'none';
-            }
+            this.container.style.display = this.container.style.display == 'block' ? 'none' : 'block';
+        }
+    }, {
+        key: 'onNextMonthClick',
+        value: function onNextMonthClick(e) {
+            var monthSelected = this.state.monthSelected;
+
+            monthSelected.setMonth(monthSelected.getMonth() + 1);
+            this.setState({ monthSelected: monthSelected });
+            if (this.props.onNextMonthClick) this.props.onNextMonthClick(e);
+        }
+    }, {
+        key: 'onPrevMonthClick',
+        value: function onPrevMonthClick(e) {
+            var monthSelected = this.state.monthSelected;
+
+            monthSelected.setMonth(monthSelected.getMonth() - 1);
+            this.setState({ monthSelected: monthSelected });
+            if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(e);
         }
     }, {
         key: 'componentDidMount',
@@ -3358,7 +3378,7 @@ var PeriodRangeByMonth = function (_React$Component) {
                                 _react2.default.createElement('i', { className: 'icon-left' })
                             ) : _react2.default.createElement(
                                 'button',
-                                { type: 'button', className: 'pull-left btn-prev', onClick: this.props.onPrevClick },
+                                { type: 'button', className: 'pull-left btn-prev', onClick: this.onPrevMonthClick.bind(this) },
                                 _react2.default.createElement('i', { className: 'icon-left' })
                             ),
                             this.props.nextButtonDisabled === true ? _react2.default.createElement(
@@ -3367,15 +3387,15 @@ var PeriodRangeByMonth = function (_React$Component) {
                                 _react2.default.createElement('i', { className: 'icon-right' })
                             ) : _react2.default.createElement(
                                 'button',
-                                { type: 'button', className: 'pull-right btn-next', onClick: this.props.onNextClick },
+                                { type: 'button', className: 'pull-right btn-next', onClick: this.onNextMonthClick.bind(this) },
                                 _react2.default.createElement('i', { className: 'icon-right' })
                             ),
                             this.props.period && this.props.period.begin ? _react2.default.createElement(
                                 'div',
                                 { className: 'holder' },
-                                this.props.period.begin.toLocaleString('en-us', { month: 'long' }),
+                                this.state.monthSelected.toLocaleString('en-us', { month: 'long' }),
                                 ' ',
-                                this.props.period.begin.getFullYear()
+                                this.state.monthSelected.getFullYear()
                             ) : _react2.default.createElement(
                                 'div',
                                 { className: 'holder' },
@@ -3412,10 +3432,10 @@ PeriodRangeByMonth.defaultProps = {
     periods: [],
     period: {},
     type: '',
-    onPrevClick: function onPrevClick() {
+    onPrevMonthClick: function onPrevMonthClick() {
         console.log('onPrevClick');
     },
-    onNextClick: function onNextClick() {
+    onNextMonthClick: function onNextMonthClick() {
         console.log('onNextClick');
     },
     // eslint-disable-next-line no-unused-vars
