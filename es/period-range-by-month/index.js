@@ -22,16 +22,18 @@ export default class PeriodRangeByMonth extends React.Component {
 
     constructor(props) {
         super(props);
+        const {selectedRange} = props;
         this.state = {
-            monthSelected: new Date(props.selectedRange.begin||props.selectedRange.startDate)
+            monthSelected: (_.isEmpty(selectedRange)||((!selectedRange.begin&&!selectedRange.startDate)))?new Date(): new Date(selectedRange.begin||selectedRange.startDate)
             , selectedRange: props.selectedRange
         }
     }
 
     componentWillReceiveProps(nextProps) {
+        const {selectedRange} = nextProps;
         this.setState({
-            monthSelected: new Date(nextProps.selectedRange.begin||nextProps.selectedRange.startDate)
-            , selectedRange: nextProps.selectedRange
+            monthSelected: (_.isEmpty(selectedRange)||((!selectedRange.begin&&!selectedRange.startDate)))?new Date(): new Date(selectedRange.begin||selectedRange.startDate)
+            , selectedRange
         });
     }
 
@@ -143,7 +145,7 @@ export default class PeriodRangeByMonth extends React.Component {
                             </button>
                         }
                         {
-                            (this.props.selectedRange && (this.props.selectedRange.begin))?
+                            this.state.monthSelected?
                                 <div className='holder'>
                                     {/*TODO put locale to const*/}
                                     {this.state.monthSelected.toLocaleString('en-us', { month: 'long' })} {this.state.monthSelected.getFullYear()}

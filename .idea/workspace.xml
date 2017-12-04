@@ -3,25 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e4207a89-9da0-4bd6-bfd1-8cd13520f59d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.css" afterPath="$PROJECT_DIR$/dist/hrm-comps.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development/period-range-index.js" afterPath="$PROJECT_DIR$/development/period-range-index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js" afterPath="$PROJECT_DIR$/dist/hrm-comps.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js.map" afterPath="$PROJECT_DIR$/dist/hrm-comps.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/es/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/styles/period-range.less" afterPath="$PROJECT_DIR$/es/styles/period-range.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/index.js" afterPath="$PROJECT_DIR$/lib/drawer/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/index.js.map" afterPath="$PROJECT_DIR$/lib/drawer/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/style/index.css" afterPath="$PROJECT_DIR$/lib/drawer/style/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/style/index.css" afterPath="$PROJECT_DIR$/lib/period-range-by-month/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/index.js" afterPath="$PROJECT_DIR$/lib/period-range/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/style/index.css" afterPath="$PROJECT_DIR$/lib/period-range/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/styles/main.css" afterPath="$PROJECT_DIR$/lib/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/styles/period-range.less" afterPath="$PROJECT_DIR$/lib/styles/period-range.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/src/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/period-range.less" afterPath="$PROJECT_DIR$/src/styles/period-range.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,11 +46,11 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/period-range-by-month/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+            <state relative-caret-position="88">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1512408928057" expanded="true" signature="6090:6532" ph="..." />
+                <marker date="1512412163602" expanded="true" signature="6267:6701" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,8 +96,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state relative-caret-position="44">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -115,9 +106,11 @@
       <file leaf-file-name="period-range-index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/development/period-range-index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="98">
+              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+              <folding>
+                <marker date="1512411171535" expanded="true" signature="1178:1273" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,8 +225,8 @@
         <option value="$PROJECT_DIR$/src/period-range-by-month/range-element/index.js" />
         <option value="$PROJECT_DIR$/src/utils/normalizePeriod.js" />
         <option value="$PROJECT_DIR$/src/period-range/index.js" />
-        <option value="$PROJECT_DIR$/development/period-range-index.js" />
         <option value="$PROJECT_DIR$/src/styles/period-range.less" />
+        <option value="$PROJECT_DIR$/development/period-range-index.js" />
         <option value="$PROJECT_DIR$/src/period-range-by-month/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
@@ -598,7 +591,7 @@
       <workItem from="1512046019079" duration="140000" />
       <workItem from="1512049296266" duration="11893000" />
       <workItem from="1512376796988" duration="14650000" />
-      <workItem from="1512398860530" duration="9135000" />
+      <workItem from="1512398860530" duration="11369000" />
     </task>
     <servers />
   </component>
@@ -635,7 +628,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317868000" />
+    <option name="totallyTimeSpent" value="320102000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,12 +646,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16332982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.49367756" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2383532" sideWeight="0.40885141" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3900325" sideWeight="0.40885141" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25135428" sideWeight="0.48103267" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25893825" sideWeight="0.48524764" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.75711274" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2383532" sideWeight="0.59114856" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3900325" sideWeight="0.59114856" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.73340356" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1007,14 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/development/period-range-index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -1046,21 +1031,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/development/period-range-index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+          <folding>
+            <marker date="1512411171535" expanded="true" signature="1178:1273" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/period-range-by-month/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+        <state relative-caret-position="88">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1512408928057" expanded="true" signature="6090:6532" ph="..." />
+            <marker date="1512412163602" expanded="true" signature="6267:6701" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state relative-caret-position="44">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
           <folding />
         </state>
       </provider>

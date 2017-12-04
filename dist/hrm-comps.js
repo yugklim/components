@@ -20405,8 +20405,10 @@ var PeriodRangeByMonth = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PeriodRangeByMonth.__proto__ || Object.getPrototypeOf(PeriodRangeByMonth)).call(this, props));
 
+        var selectedRange = props.selectedRange;
+
         _this.state = {
-            monthSelected: new Date(props.selectedRange.begin || props.selectedRange.startDate),
+            monthSelected: _lodash2.default.isEmpty(selectedRange) || !selectedRange.begin && !selectedRange.startDate ? new Date() : new Date(selectedRange.begin || selectedRange.startDate),
             selectedRange: props.selectedRange
         };
         return _this;
@@ -20415,9 +20417,11 @@ var PeriodRangeByMonth = function (_React$Component) {
     _createClass(PeriodRangeByMonth, [{
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
+            var selectedRange = nextProps.selectedRange;
+
             this.setState({
-                monthSelected: new Date(nextProps.selectedRange.begin || nextProps.selectedRange.startDate),
-                selectedRange: nextProps.selectedRange
+                monthSelected: _lodash2.default.isEmpty(selectedRange) || !selectedRange.begin && !selectedRange.startDate ? new Date() : new Date(selectedRange.begin || selectedRange.startDate),
+                selectedRange: selectedRange
             });
         }
     }, {
@@ -20564,7 +20568,7 @@ var PeriodRangeByMonth = function (_React$Component) {
                                 { type: 'button', className: 'pull-right btn-next', onClick: this.onNextMonthClick.bind(this) },
                                 _react2.default.createElement('i', { className: 'icon-right' })
                             ),
-                            this.props.selectedRange && this.props.selectedRange.begin ? _react2.default.createElement(
+                            this.state.monthSelected ? _react2.default.createElement(
                                 'div',
                                 { className: 'holder' },
                                 this.state.monthSelected.toLocaleString('en-us', { month: 'long' }),
