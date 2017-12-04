@@ -16932,6 +16932,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .btn-reset,
 .btn-close-sidebar,
 .btn-default-link,
+.range-selector-close,
 .range-selector button,
 .range-selector-shortened button,
 .date-range button,
@@ -17072,6 +17073,16 @@ a {
 }
 .btn-md-mw {
   min-width: 120px;
+}
+.range-selector-close {
+  position: absolute;
+  text-align: center;
+}
+.range-selector-close:hover {
+  color: #0099de;
+}
+.range-selector-close .icon-small-close:before {
+  content: "\e90e";
 }
 .range-selector {
   width: 255px;

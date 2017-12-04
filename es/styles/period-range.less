@@ -3,6 +3,25 @@
 @month-marker-gutter-height: 10px;
 @period-square-inner-height: 51px;
 
+.range-selector-close{
+  &:extend(.btn-reset);
+
+  position: absolute;
+  text-align: center;
+
+  &:hover {
+    color: @cerulean;
+  }
+
+  //&:active {
+  //  color: @azure-two;
+  //}
+
+  .icon-small-close:before {
+    content: "\e90e";
+  }
+}
+
 .range-selector {
   width: 255px;
   height: 244px;

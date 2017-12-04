@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RangeElement from './range-element'
-import PropRange from '../period-range'
 import _ from 'lodash'
 import normalizePeriods from '../utils/normalizePeriod'
 
@@ -78,6 +77,19 @@ export default class PeriodRangeByMonth extends React.Component {
         }
     }
 
+    dropRange(e) {
+        e.stopPropagation();
+        const {selectedRange} = this.state;
+        const rangeClone = _.cloneDeep(selectedRange);
+        rangeClone.selected=true;
+        const {periods} = this.props;
+        _.forEach(periods, p => delete p.selected);
+        this.setState({selectedRange: {}});
+        if (this.props.onRangeClick) {
+            this.props.onRangeClick(rangeClone);
+        }
+    }
+
     componentDidMount() {
         if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
             this.props.onDidMount();
@@ -94,9 +106,21 @@ export default class PeriodRangeByMonth extends React.Component {
         this.markSelectedPeriod(selectedRange, complementedPeriods);
         return (
             <div>
-                <div>
-                    <PropRange period={selectedRange} onPeriodClick={this.toggleRanges.bind(this)} {...this.props}/>
+                <div className={'date-range'} onClick={this.toggleRanges.bind(this)}>
+                    {(selectedRange && selectedRange.begin && selectedRange.end)?
+                        <div className='holder'>
+                            {selectedRange.begin.getDate()}
+                            {(selectedRange.begin.getMonth() == selectedRange.end.getMonth())?
+                                ''
+                                :` ${selectedRange.begin.toLocaleString('en-us', { month: 'long' })}`} — {selectedRange.end.getDate()} {selectedRange.end.toLocaleString('en-us', { month: 'long' })}
+
+                            <button className='range-selector-close' type='button' onClick={this.dropRange.bind(this)}>
+                                <i className='icon-small-close'></i>
+                            </button>
+                        </div>
+                        :<div className='holder'>Period not selected</div>}
                 </div>
+
             <div className={'range-selector'} ref={(container) => { this.container=container; }}  style={{display:'none'}}>
                 <div className='month-selector'>
                     <div className='inner'>
