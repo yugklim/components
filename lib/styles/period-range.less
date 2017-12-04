@@ -26,6 +26,19 @@
     vertical-align: middle;
     cursor: pointer;
 
+    &.selected {
+      background-color: @sky-blue-23;
+    }
+
+    &.locked {
+      cursor: not-allowed;
+      opacity: 0.5;
+      background-color: @silver-two;
+      &:hover {
+        background-color: @silver-two;
+      }
+    }
+
     &:hover {
       background-color: @sky-blue-23;
     }

@@ -10,15 +10,18 @@ import PeriodRangeByMonth from '../src/period-range-by-month';
 const periods = [
     {
         begin: new Date(2017, 4, 12),
-        end: new Date(2017, 4, 18)
+        end: new Date(2017, 4, 18),
+        selected: true
     }
     ,{
         begin: new Date(2017, 4, 19),
-        end: new Date(2017, 4, 25)
+        end: new Date(2017, 4, 25),
+        locked: true
     }
     ,{
         begin: new Date(2017, 4, 26),
         end: new Date(2017, 5, 2)
+        , selected: true
     }
     ,{
         begin: new Date(2017, 5, 3),
@@ -47,8 +50,8 @@ const periods = [
     ];
 
 const period = {
-    begin: new Date (2017, 3, 11),
-    end: new Date (2017, 3, 18)
+    begin: new Date (2017, 5, 24),
+    end: new Date (2017, 5, 30)
 };
 
 ReactDOM.render(

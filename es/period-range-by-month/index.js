@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RangeElement from './range-element'
 import PropRange from '../period-range'
+import _ from 'lodash'
 
 export default class PeriodRangeByMonth extends React.Component {
 
@@ -11,8 +12,7 @@ export default class PeriodRangeByMonth extends React.Component {
         type: '',
         onPreviousMonthClick: (monthSelected) => {console.log (`'onPrevClick' - ${monthSelected} `)},
         onNextMonthClick: (monthSelected) => {console.log (`'onNextClick' - ${monthSelected} `)},
-        // eslint-disable-next-line no-unused-vars
-        onRangeClick: (period) => {console.log ('onRangeClick')},
+        onRangeClick: (period) => {console.log (`onRangeClick ${period}`)},
         prevButtonDisabled: false,
         nextButtonDisabled: false
     };
@@ -50,6 +50,13 @@ export default class PeriodRangeByMonth extends React.Component {
         if (this.props.onPreviousMonthClick) this.props.onPreviousMonthClick(monthSelected, e);
     }
 
+    markSelectedPeriod(period, periods) {
+        _.forEach(periods, p => {
+            p.selected = p.selected || (p.begin||p.startDate)<=(period.begin||period.startDate)
+                && (p.end||p.endDate)>=(period.end||period.endDate)
+        })
+    }
+
     componentDidMount() {
         if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
             this.props.onDidMount();
@@ -58,7 +65,9 @@ export default class PeriodRangeByMonth extends React.Component {
 
     render() {
         const complementPeriods = this.context.complementPeriods;
-        const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, this.props.periods): this.props.periods;
+        const {period, periods} = this.props;
+        const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, periods): periods;
+        this.markSelectedPeriod(period, complementedPeriods);
         return (
             <div>
                 <div>
