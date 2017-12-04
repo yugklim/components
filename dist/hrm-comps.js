@@ -20409,14 +20409,20 @@ var PeriodRangeByMonth = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PeriodRangeByMonth.__proto__ || Object.getPrototypeOf(PeriodRangeByMonth)).call(this, props));
 
-        _this.state = { monthSelected: new Date(props.selectedRange.begin || props.selectedRange.startDate) };
+        _this.state = {
+            monthSelected: new Date(props.selectedRange.begin || props.selectedRange.startDate),
+            selectedRange: props.selectedRange
+        };
         return _this;
     }
 
     _createClass(PeriodRangeByMonth, [{
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-            this.setState({ monthSelected: new Date(nextProps.selectedRange.begin || nextProps.selectedRange.startDate) });
+            this.setState({
+                monthSelected: new Date(nextProps.selectedRange.begin || nextProps.selectedRange.startDate),
+                selectedRange: nextProps.selectedRange
+            });
         }
     }, {
         key: 'toggleRanges',
@@ -20451,6 +20457,19 @@ var PeriodRangeByMonth = function (_React$Component) {
             });
         }
     }, {
+        key: 'onRangeClick',
+        value: function onRangeClick(range) {
+            var periods = this.props.periods;
+
+            _lodash2.default.forEach(periods, function (p) {
+                return delete p.selected;
+            });
+            this.setState({ selectedRange: range });
+            if (this.props.onRangeClick) {
+                this.props.onRangeClick(range);
+            }
+        }
+    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
@@ -20463,9 +20482,8 @@ var PeriodRangeByMonth = function (_React$Component) {
             var _this2 = this;
 
             var complementPeriods = this.context.complementPeriods;
-            var _props = this.props,
-                selectedRange = _props.selectedRange,
-                periods = _props.periods;
+            var periods = this.props.periods;
+            var selectedRange = this.state.selectedRange;
 
             (0, _normalizePeriod2.default)([selectedRange]);
             (0, _normalizePeriod2.default)(periods);
@@ -20535,7 +20553,7 @@ var PeriodRangeByMonth = function (_React$Component) {
                                 proposedPeriod: proposedPeriod,
                                 markMonth: markMonth,
                                 monthName: monthName,
-                                onClick: _this2.props.onRangeClick.bind(_this2, proposedPeriod)
+                                onClick: _this2.onRangeClick.bind(_this2, proposedPeriod)
                             }, _this2.props));
                         })
                     )
@@ -20549,7 +20567,6 @@ var PeriodRangeByMonth = function (_React$Component) {
 
 PeriodRangeByMonth.defaultProps = {
     periods: [],
-    selectedRange: {},
     type: '',
     onPreviousMonthClick: function onPreviousMonthClick(monthSelected) {
         console.log('\'onPrevClick\' - ' + monthSelected + ' ');

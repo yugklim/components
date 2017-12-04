@@ -30,7 +30,10 @@ export default class PeriodRangeByMonth extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({ monthSelected: new Date(nextProps.selectedRange.begin||nextProps.selectedRange.startDate)});
+        this.setState({
+            monthSelected: new Date(nextProps.selectedRange.begin||nextProps.selectedRange.startDate)
+            , selectedRange: nextProps.selectedRange
+        });
     }
 
     toggleRanges() {
@@ -64,7 +67,7 @@ export default class PeriodRangeByMonth extends React.Component {
         _.forEach(periods, p => delete p.selected);
         this.setState({ selectedRange: range});
         if (this.props.onRangeClick) {
-            this.props.onRangeClick(this, range);
+            this.props.onRangeClick(range);
         }
     }
 
