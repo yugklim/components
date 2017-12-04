@@ -20515,23 +20515,31 @@ var PeriodRangeByMonth = function (_React$Component) {
             this.markSelectedPeriod(selectedRange, complementedPeriods);
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'range-container' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'date-range', onClick: this.toggleRanges.bind(this) },
+                    { onClick: this.toggleRanges.bind(this) },
                     selectedRange && selectedRange.begin && selectedRange.end ? _react2.default.createElement(
                         'div',
-                        { className: 'holder' },
-                        selectedRange.begin.getDate(),
-                        selectedRange.begin.getMonth() == selectedRange.end.getMonth() ? '' : ' ' + selectedRange.begin.toLocaleString('en-us', { month: 'long' }),
-                        ' \u2014 ',
-                        selectedRange.end.getDate(),
-                        ' ',
-                        selectedRange.end.toLocaleString('en-us', { month: 'long' }),
+                        { className: 'range-indicator' },
                         _react2.default.createElement(
-                            'button',
-                            { className: 'range-selector-close', type: 'button', onClick: this.dropRange.bind(this) },
-                            _react2.default.createElement('i', { className: 'icon-small-close' })
+                            'div',
+                            { className: 'holder' },
+                            selectedRange.begin.getDate(),
+                            selectedRange.begin.getMonth() == selectedRange.end.getMonth() ? '' : ' ' + selectedRange.begin.toLocaleString('en-us', { month: 'long' }),
+                            ' \u2014 ',
+                            selectedRange.end.getDate(),
+                            ' ',
+                            selectedRange.end.toLocaleString('en-us', { month: 'long' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'range-selector-close' },
+                            _react2.default.createElement(
+                                'button',
+                                { type: 'button', onClick: this.dropRange.bind(this) },
+                                _react2.default.createElement('i', { className: 'icon-small-close' })
+                            )
                         )
                     ) : _react2.default.createElement(
                         'div',

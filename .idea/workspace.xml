@@ -4,14 +4,23 @@
     <list default="true" id="e4207a89-9da0-4bd6-bfd1-8cd13520f59d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development/period-range-index.js" afterPath="$PROJECT_DIR$/development/period-range-index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.css" afterPath="$PROJECT_DIR$/dist/hrm-comps.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js" afterPath="$PROJECT_DIR$/dist/hrm-comps.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js.map" afterPath="$PROJECT_DIR$/dist/hrm-comps.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/es/period-range-by-month/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/styles/period-range.less" afterPath="$PROJECT_DIR$/es/styles/period-range.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/index.js.map" afterPath="$PROJECT_DIR$/lib/drawer/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/style/index.css" afterPath="$PROJECT_DIR$/lib/drawer/style/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/style/index.css" afterPath="$PROJECT_DIR$/lib/period-range-by-month/style/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/style/index.css" afterPath="$PROJECT_DIR$/lib/period-range/style/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/styles/main.css" afterPath="$PROJECT_DIR$/lib/styles/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/styles/period-range.less" afterPath="$PROJECT_DIR$/lib/styles/period-range.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/normalizePeriod.js" afterPath="$PROJECT_DIR$/src/utils/normalizePeriod.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/src/period-range-by-month/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/period-range.less" afterPath="$PROJECT_DIR$/src/styles/period-range.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,28 +51,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buttons.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/buttons.less">
+      <file leaf-file-name="period-range.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="84" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="132">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+              <folding>
+                <element signature="e#317#717#0" expanded="false" />
+                <element signature="e#1459#2525#0" expanded="false" />
+                <element signature="e#2545#2683#0" expanded="false" />
+                <element signature="e#2693#3093#0" expanded="false" />
+                <element signature="e#3106#3180#0" expanded="false" />
+                <element signature="e#3193#3269#0" expanded="false" />
+                <element signature="e#3413#3641#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="period-range.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/period-range-by-month/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="1195">
+              <caret line="112" column="56" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
               <folding>
-                <element signature="e#1801#1939#0" expanded="false" />
-                <element signature="e#1949#2349#0" expanded="false" />
-                <element signature="e#2362#2436#0" expanded="false" />
-                <element signature="e#2449#2525#0" expanded="false" />
-                <element signature="e#2669#2897#0" expanded="false" />
-                <element signature="e#3917#4145#0" expanded="false" />
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1512416221964" expanded="true" signature="6467:6901" ph="..." />
               </folding>
             </state>
           </provider>
@@ -89,13 +102,39 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/period-range/style/index.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="65" column="3" selection-start-line="3" selection-start-column="2" selection-end-line="65" selection-end-column="3" />
+              <folding>
+                <element signature="e#156#556#0" expanded="false" />
+                <element signature="e#570#644#0" expanded="false" />
+                <element signature="e#658#734#0" expanded="false" />
+                <element signature="e#746#835#0" expanded="false" />
+                <element signature="e#859#1087#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="period-range-index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/development/period-range-index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="54" column="2" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+            <state relative-caret-position="120">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
               <folding>
-                <marker date="1512413033834" expanded="true" signature="1175:1261" ph="..." />
+                <marker date="1512416827228" expanded="true" signature="1175:1261" ph="..." />
               </folding>
             </state>
           </provider>
@@ -210,10 +249,10 @@
         <option value="$PROJECT_DIR$/es/styles/buttons.less" />
         <option value="$PROJECT_DIR$/src/period-range-by-month/range-element/index.js" />
         <option value="$PROJECT_DIR$/src/period-range/index.js" />
-        <option value="$PROJECT_DIR$/src/styles/period-range.less" />
+        <option value="$PROJECT_DIR$/src/utils/normalizePeriod.js" />
         <option value="$PROJECT_DIR$/src/period-range-by-month/index.js" />
         <option value="$PROJECT_DIR$/development/period-range-index.js" />
-        <option value="$PROJECT_DIR$/src/utils/normalizePeriod.js" />
+        <option value="$PROJECT_DIR$/src/styles/period-range.less" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -367,6 +406,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="period-range" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRM.Ui.Components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRM.Ui.Components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="period-range" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -595,7 +656,7 @@
       <workItem from="1512046019079" duration="140000" />
       <workItem from="1512049296266" duration="11893000" />
       <workItem from="1512376796988" duration="14650000" />
-      <workItem from="1512398860530" duration="12213000" />
+      <workItem from="1512398860530" duration="16013000" />
     </task>
     <servers />
   </component>
@@ -632,7 +693,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320946000" />
+    <option name="totallyTimeSpent" value="324746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,17 +706,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16332982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.49367756" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3900325" sideWeight="0.40885141" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19609967" sideWeight="0.41412014" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25135428" sideWeight="0.48103267" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25893825" sideWeight="0.48524764" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25893825" sideWeight="0.48103267" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.75711274" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3900325" sideWeight="0.59114856" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19609967" sideWeight="0.58587986" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.73340356" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -980,41 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/period-range/style/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/buttons.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="84" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="e#1801#1939#0" expanded="false" />
-            <element signature="e#1949#2349#0" expanded="false" />
-            <element signature="e#2362#2436#0" expanded="false" />
-            <element signature="e#2449#2525#0" expanded="false" />
-            <element signature="e#2669#2897#0" expanded="false" />
-            <element signature="e#3917#4145#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1027,32 +1057,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/normalizePeriod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/period-range/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/period-range/style/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="65" column="3" selection-start-line="3" selection-start-column="2" selection-end-line="65" selection-end-column="3" />
+          <folding>
+            <element signature="e#156#556#0" expanded="false" />
+            <element signature="e#570#644#0" expanded="false" />
+            <element signature="e#658#734#0" expanded="false" />
+            <element signature="e#746#835#0" expanded="false" />
+            <element signature="e#859#1087#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/period-range-by-month/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="1195">
+          <caret line="112" column="56" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1512412163602" expanded="true" signature="6267:6701" ph="..." />
+            <marker date="1512416221964" expanded="true" signature="6467:6901" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/development/period-range-index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="54" column="2" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+        <state relative-caret-position="120">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding>
-            <marker date="1512413033834" expanded="true" signature="1175:1261" ph="..." />
+            <marker date="1512416827228" expanded="true" signature="1175:1261" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/normalizePeriod.js">
+    <entry file="file://$PROJECT_DIR$/src/styles/period-range.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="132">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="e#317#717#0" expanded="false" />
+            <element signature="e#1459#2525#0" expanded="false" />
+            <element signature="e#2545#2683#0" expanded="false" />
+            <element signature="e#2693#3093#0" expanded="false" />
+            <element signature="e#3106#3180#0" expanded="false" />
+            <element signature="e#3193#3269#0" expanded="false" />
+            <element signature="e#3413#3641#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

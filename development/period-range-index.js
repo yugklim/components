@@ -50,8 +50,8 @@ const periods = [
     ];
 
 const period = {
-    begin: new Date (2017, 5, 24),
-    end: new Date (2017, 5, 30)
+    begin: new Date (2017, 11, 28),
+    end: new Date (2018, 1, 4)
 };
 
 //const period = {};

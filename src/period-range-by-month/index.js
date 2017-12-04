@@ -107,18 +107,23 @@ export default class PeriodRangeByMonth extends React.Component {
         const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, periods): periods;
         this.markSelectedPeriod(selectedRange, complementedPeriods);
         return (
-            <div>
-                <div className={'date-range'} onClick={this.toggleRanges.bind(this)}>
+            <div className='range-container'>
+                <div  onClick={this.toggleRanges.bind(this)}>
                     {(selectedRange && selectedRange.begin && selectedRange.end)?
-                        <div className='holder'>
-                            {selectedRange.begin.getDate()}
-                            {(selectedRange.begin.getMonth() == selectedRange.end.getMonth())?
-                                ''
-                                :` ${selectedRange.begin.toLocaleString('en-us', { month: 'long' })}`} — {selectedRange.end.getDate()} {selectedRange.end.toLocaleString('en-us', { month: 'long' })}
+                        <div className='range-indicator'>
+                            <div className='holder'>
+                                {selectedRange.begin.getDate()}
+                                {(selectedRange.begin.getMonth() == selectedRange.end.getMonth())?
+                                    ''
+                                    :` ${selectedRange.begin.toLocaleString('en-us', { month: 'long' })}`} — {selectedRange.end.getDate()} {selectedRange.end.toLocaleString('en-us', { month: 'long' })}
 
-                            <button className='range-selector-close' type='button' onClick={this.dropRange.bind(this)}>
-                                <i className='icon-small-close'></i>
-                            </button>
+
+                            </div>
+                            <div className='range-selector-close' >
+                                <button type='button' onClick={this.dropRange.bind(this)}>
+                                    <i className='icon-small-close'></i>
+                                </button>
+                            </div>
                         </div>
                         :<div className='holder'>Period not selected</div>}
                 </div>

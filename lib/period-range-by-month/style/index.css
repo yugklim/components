@@ -532,21 +532,17 @@ samp {
   font-family: Consolas, Menlo, Courier, monospace;
 }
 .clearfix,
-.date-range,
 .date-range {
   zoom: 1;
 }
 .clearfix:before,
 .clearfix:after,
 .date-range:before,
-.date-range:after,
-.date-range:before,
 .date-range:after {
   content: " ";
   display: table;
 }
 .clearfix:after,
-.date-range:after,
 .date-range:after {
   clear: both;
   visibility: hidden;
@@ -554,7 +550,6 @@ samp {
   height: 0;
 }
 .clearfix:after,
-.date-range:after,
 .date-range:after {
   display: block;
   content: "";
@@ -16913,7 +16908,6 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   list-style: none;
 }
 .clearfix:after,
-.date-range:after,
 .date-range:after {
   display: block;
   content: "";
@@ -16932,10 +16926,8 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .btn-reset,
 .btn-close-sidebar,
 .btn-default-link,
-.range-selector-close,
+.range-indicator button,
 .range-selector button,
-.range-selector-shortened button,
-.date-range button,
 .date-range button {
   background: none;
   border: 0;
@@ -17074,14 +17066,54 @@ a {
 .btn-md-mw {
   min-width: 120px;
 }
-.range-selector-close {
-  position: absolute;
+.range-container {
+  width: 255px;
+}
+.range-indicator {
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-left: 2%;
+}
+.range-indicator button {
+  font-size: 9px;
+  line-height: 30px;
+  color: #91939e;
+  width: 30px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.range-indicator button:hover {
+  border-color: #dcdde2;
+  background: #f0f1f7;
+}
+.range-indicator button:active {
+  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+}
+.range-indicator button i {
+  position: relative;
+  top: 1px;
+}
+.range-indicator .holder {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  padding: 0 15px;
+  float: left;
+}
+.range-indicator .range-selector-close {
+  margin-right: 2%;
+  float: right;
   text-align: center;
 }
-.range-selector-close:hover {
+.range-indicator .range-selector-close:hover {
   color: #0099de;
 }
-.range-selector-close .icon-small-close:before {
+.range-indicator .range-selector-close:active {
+  color: #00a9f7;
+}
+.range-indicator .range-selector-close .icon-small-close:before {
   content: "\e90e";
 }
 .range-selector {
@@ -17200,120 +17232,6 @@ a {
   margin-left: -1px;
 }
 .range-selector.date-range-border .btn-next {
-  margin-right: -1px;
-}
-.range-selector-shortened {
-  width: 255px;
-  height: 61px;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-}
-.range-selector-shortened .month-selector {
-  height: 61px;
-  text-align: center;
-}
-.range-selector-shortened .month-selector .inner {
-  position: relative;
-  width: 100%;
-  top: 25%;
-}
-.range-selector-shortened button {
-  font-size: 9px;
-  line-height: 30px;
-  color: #91939e;
-  width: 30px;
-  text-align: center;
-  border: 1px solid transparent;
-}
-.range-selector-shortened button:hover {
-  border-color: #dcdde2;
-  background: #f0f1f7;
-}
-.range-selector-shortened button:active {
-  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
-}
-.range-selector-shortened button i {
-  position: relative;
-  top: 1px;
-}
-.range-selector-shortened .btn-prev {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.range-selector-shortened .btn-next {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.range-selector-shortened .holder {
-  font-size: 14px;
-  display: block;
-  overflow: hidden;
-  padding: 0 15px;
-  cursor: default;
-}
-.range-selector-shortened.date-range-border {
-  display: block;
-  border: 1px solid #d7d7d7;
-  background: #fff;
-  border-radius: 4px;
-  text-align: center;
-}
-.range-selector-shortened.date-range-border .btn-prev {
-  margin-left: -1px;
-}
-.range-selector-shortened.date-range-border .btn-next {
-  margin-right: -1px;
-}
-.date-range {
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-}
-.date-range button {
-  font-size: 9px;
-  line-height: 30px;
-  color: #91939e;
-  width: 30px;
-  text-align: center;
-  border: 1px solid transparent;
-}
-.date-range button:hover {
-  border-color: #dcdde2;
-  background: #f0f1f7;
-}
-.date-range button:active {
-  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.15);
-}
-.date-range button i {
-  position: relative;
-  top: 1px;
-}
-.date-range .btn-prev {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.date-range .btn-next {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.date-range .holder {
-  font-size: 14px;
-  display: block;
-  overflow: hidden;
-  padding: 0 15px;
-}
-.date-range.date-range-border {
-  display: block;
-  border: 1px solid #d7d7d7;
-  background: #fff;
-  border-radius: 4px;
-  text-align: center;
-}
-.date-range.date-range-border .btn-prev {
-  margin-left: -1px;
-}
-.date-range.date-range-border .btn-next {
   margin-right: -1px;
 }
 .date-range {
