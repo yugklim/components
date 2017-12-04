@@ -58,7 +58,7 @@ ReactDOM.render(
     <div style={{marginLeft: '55px'}}>
         <div><PeriodRange period={period} /></div>
         <div style={{maxHeight: '50px'}}>
-            <div style={{marginLeft: '25px'}}><PeriodRangeByMonth period={period} periods={periods}/></div>
+            <div style={{marginLeft: '25px'}}><PeriodRangeByMonth selectedRange={period} periods={periods}/></div>
             <p>AAAA</p>
             <p>BBBB</p>
             <p>CCCC</p>

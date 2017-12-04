@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import RangeElement from './range-element'
 import PropRange from '../period-range'
 import _ from 'lodash'
+import normalizePeriods from '../utils/normalizePeriod'
 
 export default class PeriodRangeByMonth extends React.Component {
 
     static defaultProps = {
         periods: [],
-        period: {},
+        selectedRange: {},
         type: '',
         onPreviousMonthClick: (monthSelected) => {console.log (`'onPrevClick' - ${monthSelected} `)},
         onNextMonthClick: (monthSelected) => {console.log (`'onNextClick' - ${monthSelected} `)},
-        onRangeClick: (period) => {console.log (`onRangeClick ${period}`)},
+        onRangeClick: (selectedRange) => {console.log (`onRangeClick ${selectedRange}`)},
         prevButtonDisabled: false,
         nextButtonDisabled: false
     };
@@ -23,11 +24,11 @@ export default class PeriodRangeByMonth extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { monthSelected: new Date(props.period.begin||props.period.startDate) }
+        this.state = { monthSelected: new Date(props.selectedRange.begin||props.selectedRange.startDate) }
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({ monthSelected: new Date(nextProps.period.begin||nextProps.period.startDate)});
+        this.setState({ monthSelected: new Date(nextProps.selectedRange.begin||nextProps.selectedRange.startDate)});
     }
 
     toggleRanges() {
@@ -52,8 +53,7 @@ export default class PeriodRangeByMonth extends React.Component {
 
     markSelectedPeriod(period, periods) {
         _.forEach(periods, p => {
-            p.selected = p.selected || (p.begin||p.startDate)<=(period.begin||period.startDate)
-                && (p.end||p.endDate)>=(period.end||period.endDate)
+            p.selected = p.selected || (p.startDate<=period.startDate && p.endDate>=period.endDate)
         })
     }
 
@@ -65,13 +65,15 @@ export default class PeriodRangeByMonth extends React.Component {
 
     render() {
         const complementPeriods = this.context.complementPeriods;
-        const {period, periods} = this.props;
+        const {selectedRange, periods} = this.props;
+        normalizePeriods([selectedRange]);
+        normalizePeriods(periods);
         const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, periods): periods;
-        this.markSelectedPeriod(period, complementedPeriods);
+        this.markSelectedPeriod(selectedRange, complementedPeriods);
         return (
             <div>
                 <div>
-                    <PropRange onPeriodClick={this.toggleRanges.bind(this)} {...this.props}/>
+                    <PropRange period={selectedRange} onPeriodClick={this.toggleRanges.bind(this)} {...this.props}/>
                 </div>
             <div className={'range-selector'} ref={(container) => { this.container=container; }}  style={{display:'none'}}>
                 <div className='month-selector'>
@@ -95,7 +97,7 @@ export default class PeriodRangeByMonth extends React.Component {
                             </button>
                         }
                         {
-                            (this.props.period && this.props.period.begin)?
+                            (this.props.selectedRange && (this.props.selectedRange.begin))?
                                 <div className='holder'>
                                     {/*TODO put locale to const*/}
                                     {this.state.monthSelected.toLocaleString('en-us', { month: 'long' })} {this.state.monthSelected.getFullYear()}
