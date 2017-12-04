@@ -9,7 +9,6 @@ export default class PeriodRangeByMonth extends React.Component {
 
     static defaultProps = {
         periods: [],
-        selectedRange: {},
         type: '',
         onPreviousMonthClick: (monthSelected) => {console.log (`'onPrevClick' - ${monthSelected} `)},
         onNextMonthClick: (monthSelected) => {console.log (`'onNextClick' - ${monthSelected} `)},
@@ -24,7 +23,10 @@ export default class PeriodRangeByMonth extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { monthSelected: new Date(props.selectedRange.begin||props.selectedRange.startDate) }
+        this.state = {
+            monthSelected: new Date(props.selectedRange.begin||props.selectedRange.startDate)
+            , selectedRange: props.selectedRange
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -57,6 +59,15 @@ export default class PeriodRangeByMonth extends React.Component {
         })
     }
 
+    onRangeClick(range) {
+        const {periods} = this.props;
+        _.forEach(periods, p => delete p.selected);
+        this.setState({ selectedRange: range});
+        if (this.props.onRangeClick) {
+            this.props.onRangeClick(this, range);
+        }
+    }
+
     componentDidMount() {
         if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
             this.props.onDidMount();
@@ -65,7 +76,8 @@ export default class PeriodRangeByMonth extends React.Component {
 
     render() {
         const complementPeriods = this.context.complementPeriods;
-        const {selectedRange, periods} = this.props;
+        const {periods} = this.props;
+        const {selectedRange} = this.state;
         normalizePeriods([selectedRange]);
         normalizePeriods(periods);
         const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, periods): periods;
@@ -117,7 +129,7 @@ export default class PeriodRangeByMonth extends React.Component {
                                     proposedPeriod={proposedPeriod}
                                     markMonth={markMonth}
                                     monthName={monthName}
-                                    onClick={this.props.onRangeClick.bind(this, proposedPeriod)}
+                                    onClick={this.onRangeClick.bind(this, proposedPeriod)}
                                     {...this.props}>
 
                                 </RangeElement>
