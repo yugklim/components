@@ -63,11 +63,18 @@ export default class PeriodRangeByMonth extends React.Component {
     }
 
     onRangeClick(range) {
+        const rangeClone = _.cloneDeep(range)
         const {periods} = this.props;
         _.forEach(periods, p => delete p.selected);
-        this.setState({ selectedRange: range});
+        if (!rangeClone.selected) {
+            this.setState({selectedRange: rangeClone});
+        }
+        else {
+            this.setState({selectedRange: {}});
+        }
+
         if (this.props.onRangeClick) {
-            this.props.onRangeClick(range);
+            this.props.onRangeClick(rangeClone);
         }
     }
 

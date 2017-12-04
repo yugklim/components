@@ -20459,14 +20459,20 @@ var PeriodRangeByMonth = function (_React$Component) {
     }, {
         key: 'onRangeClick',
         value: function onRangeClick(range) {
+            var rangeClone = _lodash2.default.cloneDeep(range);
             var periods = this.props.periods;
 
             _lodash2.default.forEach(periods, function (p) {
                 return delete p.selected;
             });
-            this.setState({ selectedRange: range });
+            if (!rangeClone.selected) {
+                this.setState({ selectedRange: rangeClone });
+            } else {
+                this.setState({ selectedRange: {} });
+            }
+
             if (this.props.onRangeClick) {
-                this.props.onRangeClick(range);
+                this.props.onRangeClick(rangeClone);
             }
         }
     }, {
