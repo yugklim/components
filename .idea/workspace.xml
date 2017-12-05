@@ -3,24 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4207a89-9da0-4bd6-bfd1-8cd13520f59d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development/period-range-index.js" afterPath="$PROJECT_DIR$/development/period-range-index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.css" afterPath="$PROJECT_DIR$/dist/hrm-comps.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js" afterPath="$PROJECT_DIR$/dist/hrm-comps.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/hrm-comps.js.map" afterPath="$PROJECT_DIR$/dist/hrm-comps.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/es/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es/styles/period-range.less" afterPath="$PROJECT_DIR$/es/styles/period-range.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/index.js.map" afterPath="$PROJECT_DIR$/lib/drawer/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drawer/style/index.css" afterPath="$PROJECT_DIR$/lib/drawer/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range-by-month/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range-by-month/style/index.css" afterPath="$PROJECT_DIR$/lib/period-range-by-month/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/index.js.map" afterPath="$PROJECT_DIR$/lib/period-range/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/period-range/style/index.css" afterPath="$PROJECT_DIR$/lib/period-range/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/styles/main.css" afterPath="$PROJECT_DIR$/lib/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/styles/period-range.less" afterPath="$PROJECT_DIR$/lib/styles/period-range.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/period-range-by-month/index.js" afterPath="$PROJECT_DIR$/src/period-range-by-month/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/period-range.less" afterPath="$PROJECT_DIR$/src/styles/period-range.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -274,10 +257,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="1934" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -656,7 +638,7 @@
       <workItem from="1512046019079" duration="140000" />
       <workItem from="1512049296266" duration="11893000" />
       <workItem from="1512376796988" duration="14650000" />
-      <workItem from="1512398860530" duration="16013000" />
+      <workItem from="1512398860530" duration="17195000" />
     </task>
     <servers />
   </component>
@@ -693,7 +675,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324746000" />
+    <option name="totallyTimeSpent" value="325928000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -705,18 +687,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1934" height="1047" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16332982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16350211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.49367756" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19609967" sideWeight="0.41412014" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41028446" sideWeight="0.41402954" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25135428" sideWeight="0.48103267" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25893825" sideWeight="0.48103267" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.75711274" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19609967" sideWeight="0.58587986" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41028446" sideWeight="0.58597046" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.73340356" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
