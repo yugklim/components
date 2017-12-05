@@ -1,6 +1,6 @@
 {
   "name": "hrm-comps",
-  "version": "1.0.59",
+  "version": "1.0.63",
   "scripts": {
     "test": "jest",
     "build:dist": "webpack --config webpack.dist.config.js",
@@ -49,7 +49,7 @@
   ],
   "dependencies": {
     "antd": "^2.1.0",
-    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"

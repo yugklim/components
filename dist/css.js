@@ -7,7 +7,7 @@
 		exports["hrm-comps"] = factory();
 	else
 		root["hrm-comps"] = factory();
-})(this, function() {
+})(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -76,6 +76,16 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ({
 
 /***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(11);
+
+/***/ }),
+
+/***/ 11:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -85,18 +95,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(9);
+module.exports = __webpack_require__(10);
 
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(10);
 
 /***/ })
 
