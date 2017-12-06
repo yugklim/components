@@ -20732,10 +20732,11 @@ var RangeElement = function (_React$Component) {
         value: function render() {
             var proposedPeriod = this.props.proposedPeriod;
 
+            var onClickHandler = proposedPeriod.locked ? null : this.props.onClick.bind(this, proposedPeriod);
             return _react2.default.createElement(
                 'div',
                 { className: 'period-square ' + (proposedPeriod.locked ? 'locked' : '') + ' ' + (proposedPeriod.selected ? 'selected' : ''),
-                    onClick: this.props.onClick.bind(this, proposedPeriod) },
+                    onClick: onClickHandler },
                 _react2.default.createElement(
                     'div',
                     { className: 'period-month' + (this.props.markMonth ? ' month-begins' : '') },

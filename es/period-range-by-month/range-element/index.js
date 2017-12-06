@@ -14,9 +14,10 @@ export default class RangeElement extends React.Component {
 
     render() {
         const {proposedPeriod} = this.props;
+        const onClickHandler = proposedPeriod.locked?null:this.props.onClick.bind(this, proposedPeriod);
         return(
             <div className={`period-square ${proposedPeriod.locked?'locked':''} ${proposedPeriod.selected ? 'selected' : ''}`}
-                onClick={this.props.onClick.bind(this, proposedPeriod)}>
+                onClick={onClickHandler}>
                 <div className={`period-month${this.props.markMonth?' month-begins':''}`}>
                     {this.props.monthName?
                         proposedPeriod.begin.toLocaleString('en-us', { month: 'long' }).toUpperCase()
