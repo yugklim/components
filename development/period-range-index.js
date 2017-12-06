@@ -49,12 +49,12 @@ const periods = [
     }
     ];
 
-const period = {
-    begin: new Date (2017, 11, 28),
-    end: new Date (2018, 1, 4)
-};
+// const period = {
+//     begin: new Date (2017, 11, 28),
+//     end: new Date (2018, 1, 4)
+// };
 
-//const period = {};
+const period = {};
 
 ReactDOM.render(
     <div style={{marginLeft: '55px'}}>

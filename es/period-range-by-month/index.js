@@ -20,6 +20,8 @@ export default class PeriodRangeByMonth extends React.Component {
         complementPeriods: PropTypes.func
     };
 
+    static noPeriodInfo = 'No selected period';
+
     constructor(props) {
         super(props);
         const {selectedRange} = props;
@@ -27,6 +29,9 @@ export default class PeriodRangeByMonth extends React.Component {
             monthSelected: (_.isEmpty(selectedRange)||((!selectedRange.begin&&!selectedRange.startDate)))?new Date(): new Date(selectedRange.begin||selectedRange.startDate)
             , selectedRange: props.selectedRange
         }
+
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleEscClick = this.handleEscClick.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -39,6 +44,10 @@ export default class PeriodRangeByMonth extends React.Component {
 
     toggleRanges() {
         this.container.style.display = (this.container.style.display=='block')?'none':'block';
+    }
+
+    hideRanges() {
+        this.container.style.display = 'none';
     }
 
     onNextMonthClick(e) {
@@ -92,11 +101,31 @@ export default class PeriodRangeByMonth extends React.Component {
         }
     }
 
-    componentDidMount() {
-        if (this.props.onDidMount && typeof this.props.onDidMount === 'function') {
-            this.props.onDidMount();
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    }
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.hideRanges();
         }
     }
+
+    handleEscClick(event) {
+        if (event.keyCode == 27) {
+            this.hideRanges();
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+        document.addEventListener('keyup', this.handleEscClick);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+        document.removeEventListener('keyup', this.handleEscClick);
+    }
+
 
     render() {
         const complementPeriods = this.context.complementPeriods;
@@ -107,7 +136,7 @@ export default class PeriodRangeByMonth extends React.Component {
         const complementedPeriods = complementPeriods? complementPeriods(this.state.monthSelected, periods): periods;
         this.markSelectedPeriod(selectedRange, complementedPeriods);
         return (
-            <div className='range-container'>
+            <div className='range-container' ref={this.setWrapperRef.bind(this)}>
                 <div  onClick={this.toggleRanges.bind(this)}>
                     {(selectedRange && selectedRange.begin && selectedRange.end)?
                         <div className='range-indicator'>
@@ -116,16 +145,17 @@ export default class PeriodRangeByMonth extends React.Component {
                                 {(selectedRange.begin.getMonth() == selectedRange.end.getMonth())?
                                     ''
                                     :` ${selectedRange.begin.toLocaleString('en-us', { month: 'long' })}`} — {selectedRange.end.getDate()} {selectedRange.end.toLocaleString('en-us', { month: 'long' })}
-
-
                             </div>
                             <div className='range-selector-close' >
-                                <button type='button' onClick={this.dropRange.bind(this)}>
+                                <button type='button' onClick={::this.dropRange}>
                                     <i className='icon-small-close'></i>
                                 </button>
                             </div>
                         </div>
-                        :<div className='holder'>Period not selected</div>}
+                        :<div className='range-indicator'>
+                            <div className='holder'>{PeriodRangeByMonth.noPeriodInfo}</div>
+                        </div>
+                    }
                 </div>
 
             <div className={'range-selector'} ref={(container) => { this.container=container; }}  style={{display:'none'}}>
@@ -136,7 +166,7 @@ export default class PeriodRangeByMonth extends React.Component {
                                 <button type='button' disabled className='pull-left btn-prev-disabled'>
                                     <i className='icon-left'></i>
                                 </button>
-                                :<button type='button' className='pull-left btn-prev' onClick={this.onPrevMonthClick.bind(this)}>
+                                :<button type='button' className='pull-left btn-prev' onClick={::this.onPrevMonthClick}>
                                 <i className='icon-left'></i>
                             </button>
                         }
@@ -145,7 +175,7 @@ export default class PeriodRangeByMonth extends React.Component {
                                 <button type='button' disabled className='pull-right btn-next'>
                                     <i className='icon-right'></i>
                                 </button>
-                                :<button type='button' className='pull-right btn-next' onClick={this.onNextMonthClick.bind(this)}>
+                                :<button type='button' className='pull-right btn-next' onClick={::this.onNextMonthClick}>
                                 <i className='icon-right'></i>
                             </button>
                         }
@@ -159,7 +189,7 @@ export default class PeriodRangeByMonth extends React.Component {
                         }
                     </div>
                 </div>
-                <div ref={(ranges) => { this.ranges= ranges; }} >
+                <div ref={(ranges) => { this.ranges= ranges; }} id='x' >
                     {
                         complementedPeriods.map((proposedPeriod, idx, periods) => {
                                 const previousPeriod = periods[idx-1];
